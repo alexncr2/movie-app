@@ -14,8 +14,8 @@
 </blockquote>
 <h3 id="models">Models</h3>
 <ol>
-<li><i>Movie:</i> Id, Title, List&gt;CategoryId&lt;, Description, LaunchDate, PictureUrl, TrailerUrl, Rating, List&gt;Actor&lt;, List&gt;Comment&lt;, Status, Created By, Created At</li>
-<li><i>User:</i> Id, First Name, Last Name, List, Email, Password, Status, Created At</li>
+<li><i>Movie:</i> Id, Title, List&lt;CategoryId&gt;, Description, LaunchDate, PictureUrl, TrailerUrl, Rating, List&lt;Actor&gt;, List&lt;Comment&gt;, Status, Created By, Created At</li>
+<li><i>User:</i> Id, First Name, Last Name, List&lt;Movie&gt;, Email, Password, Status, Created At</li>
 <li><i>Actor:</i> Id, First Name, Last Name, Status, Created At</li>
 <li><i>Category:</i> Id, Name, Status, Created At</li>
 <li><i>Comment</i> Id, Message, Status, Saved At, Saved By, Is Edited, Movie Id</li>
