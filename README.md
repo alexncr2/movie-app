@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>requirements</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
 <body class="stackedit">
   <div class="stackedit__html"><blockquote>
+<p>Requirements</p>
 <p>App Name: MoVenture</p>
 </blockquote>
 <h3 id="models">Models</h3>
