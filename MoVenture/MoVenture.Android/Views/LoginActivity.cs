@@ -4,7 +4,7 @@ using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
 {
-    [Activity(Label = "Login", MainLauncher = true)]
+    [Activity(MainLauncher = true)]
     public class LoginActivity : BaseActivity
     {
         public new LoginViewModel ViewModel

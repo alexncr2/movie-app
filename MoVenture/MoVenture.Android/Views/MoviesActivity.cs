@@ -6,12 +6,18 @@ using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MoVenture.ViewModels;
+using MoVenture.Interfaces;
+using MoVenture.Services;
+using MoVenture.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MoVenture.Android.Views
 {
-    [Activity(Label = "Movies")]
+    [Activity]
     public class MoviesActivity : BaseActivity
     {
+    
         public new MoviesViewModel ViewModel
         {
             get { return (MoviesViewModel) base.ViewModel; }
@@ -25,7 +31,7 @@ namespace MoVenture.Android.Views
             var MoviesRecyclerView = FindViewById<MvxRecyclerView>(Resource.Id.rv_movies);
 
             MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Vertical, false));
-            MoviesRecyclerView.Adapter = new CustomMovieAdapter((IMvxAndroidBindingContext)BindingContext, OnRowClicked);
+            MoviesRecyclerView.Adapter = new CustomMovieAdapter((IMvxAndroidBindingContext)BindingContext, OnRowClicked, ViewModel.Movies);
         }
 
         public void OnRowClicked(int row)
@@ -38,9 +44,12 @@ namespace MoVenture.Android.Views
     public class CustomMovieAdapter : MvxRecyclerAdapter
     {
         public Action<int> OnRowClicked { get; set; }
+        private List<Movie> allMovies;
 
-        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked) : base(bindingContext)
+        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked, IEnumerable<Movie> allMovies)
+            : base(bindingContext)
         {
+            this.allMovies = allMovies.ToList();
             OnRowClicked = onRowClicked;
         }
 
@@ -63,6 +72,19 @@ namespace MoVenture.Android.Views
             {
                 return;
             }
+
+            var m = allMovies[position];
+            castedHolder.MovieCategoriesTextView.Text = m.GetCategories();
+            
+            castedHolder.Container.Tag = position;
+            try
+            {
+                castedHolder.Container.Click -= Container_Click;
+            }
+            catch (Exception e)
+            {
+            }
+            castedHolder.Container.Click+=Container_Click;
         }
 
         void Container_Click(object sender, EventArgs e)
@@ -83,12 +105,14 @@ namespace MoVenture.Android.Views
     public class CustomMoviesViewHolder : MvxRecyclerViewHolder
     {
         public TextView MovieNameTextView;
+        public TextView MovieCategoriesTextView;
         public View Container;
 
         public CustomMoviesViewHolder(View itemView, IMvxAndroidBindingContext context) : base(itemView, context)
         {
             Container = itemView;
             MovieNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_title);
+            MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
         }
     }
 }

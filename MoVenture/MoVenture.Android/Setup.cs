@@ -3,6 +3,8 @@ using MvvmCross.Droid.Platform;
 using Android.Content;
 using MoVenture.Android.Services;
 using MvvmCross.Platform;
+using MoVenture.Services;
+using MoVenture.Interfaces;
 
 namespace MoVenture.Android
 {
@@ -22,6 +24,7 @@ namespace MoVenture.Android
         {
             base.InitializeLastChance();
             Mvx.RegisterType<INativeValidationService, NativeValidationService>();
+            Mvx.RegisterType<IMovieService, MovieService>();
 
         }
     }

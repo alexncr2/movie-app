@@ -4,7 +4,7 @@ using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
 {
-    [Activity(Label = "Register")]
+    [Activity]
     public class RegisterActivity : BaseActivity
     {
         public new RegisterViewModel ViewModel

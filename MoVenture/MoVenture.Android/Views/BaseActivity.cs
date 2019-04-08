@@ -12,15 +12,8 @@ namespace MoVenture.Android.Views
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            try
-            {
-                base.OnCreate(savedInstanceState);
-                CustomApplication.Instance.CurrentActivity = this;
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.Print("why" + e.InnerException.ToString());
-            }
+            base.OnCreate(savedInstanceState);
+            CustomApplication.Instance.CurrentActivity = this;
         }
 
         protected override void OnResume()

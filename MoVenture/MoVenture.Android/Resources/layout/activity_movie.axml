@@ -9,9 +9,54 @@
 		android:id="@+id/tv_title_detail"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:gravity="center_horizontal"
+		android:layout_marginTop="16dp"
+		android:layout_marginLeft="16dp"
 		android:text="sample_text"
-		android:textSize="18sp"
+		android:textSize="28sp"
+		android:textStyle="bold"
 		local:MvxBind="Text Movie.Title" />
+	
+	<TextView
+		android:id="@+id/tv_description_detail"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tv_title_detail"
+		android:layout_marginTop="9dp"
+		android:layout_marginLeft="16dp"
+		android:text="sample_text"
+		android:textSize="16sp"
+		local:MvxBind="Text Movie.Description" />
+
+	<TextView
+		android:id="@+id/tv_actors_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tv_description_detail"
+		android:layout_marginTop="16dp"
+		android:layout_marginLeft="16dp"
+		android:text="Actors"
+		android:textSize="24sp"
+		android:textStyle="bold" />
+
+	<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+		android:id="@+id/rv_actors_list"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tv_actors_title"
+		android:layout_marginTop="16dp"
+		android:layout_marginLeft="16dp"
+		local:MvxBind="ItemsSource Actors"
+		local:MvxItemTemplate="@layout/actor_item"/>
+
+	<TextView
+		android:id="@+id/tv_comments_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/rv_actors_list"
+		android:layout_marginTop="16dp"
+		android:layout_marginLeft="16dp"
+		android:text="Comments"
+		android:textSize="24sp"
+		android:textStyle="bold" />
 
 </RelativeLayout>

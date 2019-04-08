@@ -11,5 +11,10 @@ namespace MoVenture.Models
         public string LastName { get; set; }
         public int Status { get; set; }
 
+        public Actor(string name)
+        {
+            this.FirstName = name;
+        }
+
     }
 }

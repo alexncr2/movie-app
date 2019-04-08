@@ -1,4 +1,5 @@
-﻿using MoVenture.Models;
+﻿using MoVenture.Interfaces;
+using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -7,13 +8,15 @@ namespace MoVenture.ViewModels
 {
     public class MoviesViewModel : MvxViewModel
     {
-        private ObservableCollection<Movie> mMovies = new ObservableCollection<Movie>();
-        private ObservableCollection<Movie> mMoviesCopy = new ObservableCollection<Movie>();
-        
+        private ObservableCollection<Movie> mMovies;
+        private ObservableCollection<Movie> mMoviesCopy;
+
+        private readonly IMovieService mMovieService;
         private ICommand mViewDetailsCommand;
 
-        public MoviesViewModel()
+        public MoviesViewModel(IMovieService movieService)
         {
+            mMovieService = movieService;
         }
 
         public ObservableCollection<Movie> Movies
@@ -38,20 +41,13 @@ namespace MoVenture.ViewModels
         {
             base.Start();
 
-            Movies.Add(new Movie("Pulp Fiction", 5.0));
-            Movies.Add(new Movie("Die Hard", 3.96));
-            Movies.Add(new Movie("Blade Runner", 4.30));
-            Movies.Add(new Movie("Super Long Movie Title idk something that has a long name", 4.52));
-            Movies.Add(new Movie("Shawshank Redemption", 4.9));
-            Movies.Add(new Movie("Breaking Bad", 5));
-            Movies.Add(new Movie("How I Met Your Mother", 3.1));
-
-            mMoviesCopy = mMovies;
+            Movies = new ObservableCollection<Movie>(mMovieService.GetMovies(true));
+            mMoviesCopy = Movies;
         }
 
         private void ViewDetails(Movie movie)
         {
-            ShowViewModel<MovieViewModel>(new { MovieId = movie.Id });
+            ShowViewModel<MovieViewModel>(new { movieId = movie.Id });
         }
     }
 }
