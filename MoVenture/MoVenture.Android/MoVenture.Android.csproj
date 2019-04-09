@@ -71,6 +71,7 @@
     <Compile Include="Application\CustomApplication.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Views\BaseActivity.cs" />
+    <Compile Include="Views\CommentActivity.cs" />
     <Compile Include="Views\LoginActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +144,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\actor_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\comment_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_comments.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

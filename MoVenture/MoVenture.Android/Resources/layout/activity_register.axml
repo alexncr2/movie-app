@@ -59,7 +59,7 @@
 			android:gravity="center"
 			android:clickable="true"
 			android:text="I already have an account"
-		    local:MvxBind="Click HasAccountCommand"/>
+		    local:MvxBind="Click HasAccountCommand" />
 		
 	</LinearLayout>
 </RelativeLayout>

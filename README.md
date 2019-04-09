@@ -18,7 +18,7 @@
 <li><i>User:</i> Id, First Name, Last Name, List&lt;Movie&gt;, Email, Password, Status, Created At</li>
 <li><i>Actor:</i> Id, First Name, Last Name, Status, Created At</li>
 <li><i>Category:</i> Id, Name, Status, Created At</li>
-<li><i>Comment</i> Id, Message, Status, Saved At, Saved By, Is Edited, Movie Id</li>
+<li><i>Comment:</i> Id, Message, Status, Saved At, Saved By, Is Edited, Movie Id</li>
 </ol>
 <h3 id="user-features">User Features</h3>
 <ul>

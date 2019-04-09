@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:layout_marginLeft="16dp"
+	android:layout_marginRight="16dp">
+	
+
+	<TextView
+		android:id="@+id/tv_comment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="Type a comment"
+		android:textSize="24sp"
+		android:textStyle="bold" />
+		
+	<EditText
+		android:id="@+id/et_comment"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tv_comment"
+		android:layout_alignParentStart="true"
+		android:layout_marginTop="16dp"
+		android:lines="20"
+		android:minLines="4"
+		android:inputType="textMultiLine"
+		android:gravity="top|left"
+		android:scrollbars="vertical"
+		android:background="#cccccc"
+		local:MvxBind="Text CommentMessage"/>
+	
+		
+	<Button
+		android:id="@+id/btn_save_comment"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/et_comment"
+		android:layout_marginTop="16dp"
+		android:text="Save Comment"
+		local:MvxBind="Click SaveCommentCommand"  />
+		
+	<Button
+		android:id="@+id/btn_cancel_comment"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/btn_save_comment"
+		android:layout_marginTop="8dp"
+		android:text="Cancel"
+		local:MvxBind="Click CancelCommand"  />
+
+
+</RelativeLayout>

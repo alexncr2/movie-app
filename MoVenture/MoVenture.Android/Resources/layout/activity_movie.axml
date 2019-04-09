@@ -1,62 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
+<ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-	<TextView
-		android:id="@+id/tv_title_detail"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:layout_marginLeft="16dp"
-		android:text="sample_text"
-		android:textSize="28sp"
-		android:textStyle="bold"
-		local:MvxBind="Text Movie.Title" />
-	
-	<TextView
-		android:id="@+id/tv_description_detail"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/tv_title_detail"
-		android:layout_marginTop="9dp"
-		android:layout_marginLeft="16dp"
-		android:text="sample_text"
-		android:textSize="16sp"
-		local:MvxBind="Text Movie.Description" />
-
-	<TextView
-		android:id="@+id/tv_actors_title"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/tv_description_detail"
-		android:layout_marginTop="16dp"
-		android:layout_marginLeft="16dp"
-		android:text="Actors"
-		android:textSize="24sp"
-		android:textStyle="bold" />
-
-	<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
-		android:id="@+id/rv_actors_list"
+	<RelativeLayout 
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/tv_actors_title"
-		android:layout_marginTop="16dp"
-		android:layout_marginLeft="16dp"
-		local:MvxBind="ItemsSource Actors"
-		local:MvxItemTemplate="@layout/actor_item"/>
+		android:layout_height="match_parent"
+		android:layout_marginLeft="32dp"
+		android:layout_marginRight="32dp">
 
-	<TextView
-		android:id="@+id/tv_comments_title"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/rv_actors_list"
-		android:layout_marginTop="16dp"
-		android:layout_marginLeft="16dp"
-		android:text="Comments"
-		android:textSize="24sp"
-		android:textStyle="bold" />
+		<TextView
+			android:id="@+id/tv_title_detail"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:text="sample_text"
+			android:textSize="28sp"
+			android:textStyle="bold"
+			local:MvxBind="Text Movie.Title" />
+	
+		<TextView
+			android:id="@+id/tv_description_detail"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_title_detail"
+			android:layout_marginTop="8dp"
+			android:text="sample_text"
+			android:textSize="16sp"
+			local:MvxBind="Text Movie.Description" />
 
-</RelativeLayout>
+		<TextView
+			android:id="@+id/tv_actors_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_description_detail"
+			android:layout_marginTop="32dp"
+			android:text="Actors"
+			android:textSize="28sp"
+			android:textStyle="bold" />
+
+		<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+			android:id="@+id/rv_actors_list"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_actors_title"
+			android:layout_marginTop="8dp"
+			local:MvxBind="ItemsSource Actors"
+			local:MvxItemTemplate="@layout/actor_item"/>
+	
+
+		<TextView
+			android:id="@+id/tv_comments_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:layout_below="@id/rv_actors_list"
+			android:text="Comment Section"
+			android:textSize="28sp"
+			android:textStyle="bold" />
+		
+		<Button
+			android:id="@+id/btn_add_comments"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_comments_title"
+			android:layout_marginTop="8dp"
+			android:text="Add Comment"
+			local:MvxBind="Click AddCommentCommand" />
+
+		<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+			android:id="@+id/rv_comments_list"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/btn_add_comments"
+			android:layout_marginTop="8dp"
+			local:MvxBind="ItemsSource Comments"
+			local:MvxItemTemplate="@layout/comment_item"/>
+
+	</RelativeLayout>
+</ScrollView>

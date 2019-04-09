@@ -9,5 +9,11 @@ namespace MoVenture.Models
         public Guid Id { get; set; }
         public string Message { get; set; }
         public int Status { get; set; }
+
+        public Comment(string msg)
+        {
+            this.Id = Guid.NewGuid();
+            this.Message = msg;
+        }
     }
 }
