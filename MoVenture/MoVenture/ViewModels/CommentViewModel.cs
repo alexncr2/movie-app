@@ -1,4 +1,5 @@
-﻿using MoVenture.Models;
+﻿using MoVenture.Interfaces;
+using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,17 @@ namespace MoVenture.ViewModels
 {
     public class CommentViewModel : MvxViewModel
     {
+        private readonly IMovieService mMovieService;
+
+        private Movie Movie;
         private string mCommentMessage;
+        private string mMovieId;
 
 
+        public CommentViewModel(IMovieService movieService)
+        {
+            mMovieService = movieService;
+        }
 
         public string CommentMessage
         {

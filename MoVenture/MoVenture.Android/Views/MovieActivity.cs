@@ -1,5 +1,6 @@
 ﻿
 using Android.App;
+using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -32,6 +33,7 @@ namespace MoVenture.Android.Views
             var CommentsRecyclerView = FindViewById<MvxRecyclerView>(Resource.Id.rv_comments_list);
             CommentsRecyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Vertical, false));
             CommentsRecyclerView.Adapter = new CustomCommentAdapter((IMvxAndroidBindingContext)BindingContext, ViewModel.Movie);
+            
         }
     }
 
