@@ -20,6 +20,13 @@ namespace MoVenture.Android
             return new App();
         }
 
+        protected override void InitializeFirstChance()
+        {
+            Mvx.ConstructAndRegisterSingleton<INativeValidationService, NativeValidationService>();
+            Mvx.ConstructAndRegisterSingleton<IMovieService, MovieService>();
+            base.InitializeFirstChance();
+        }
+
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();

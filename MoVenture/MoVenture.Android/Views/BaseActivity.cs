@@ -1,24 +1,31 @@
 ﻿
 using Android.OS;
-using MvvmCross.Droid.Views;
 using MoVenture.Android.Application;
-using Android.App;
+using MvvmCross.Droid.Support.V7.AppCompat;
 using System;
-using System.Diagnostics;
 
 namespace MoVenture.Android.Views
 {
-    public class BaseActivity : MvxActivity
+    public class BaseActivity : MvxAppCompatActivity
     {
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
+            try
+            {
+                base.OnCreate(savedInstanceState);
+            }
+            catch(System.Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("BaseActivity\n" + e.ToString());
+            }
             CustomApplication.Instance.CurrentActivity = this;
         }
 
         protected override void OnResume()
         {
             base.OnResume();
+            CustomApplication.Instance.CurrentActivity = this;
         }
     }
 }

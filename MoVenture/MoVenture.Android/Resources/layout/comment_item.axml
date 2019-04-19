@@ -18,13 +18,10 @@
 
         <TextView
             android:id="@+id/tv_comment_msg"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="8dp"
-            android:ellipsize="none"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
             android:maxLines="10"
             android:text="sample_text"
 			android:textColor="@android:color/white"
@@ -36,6 +33,7 @@
         android:id="@+id/ll_buttons_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+		android:layout_margin="8dp"
         android:layout_below="@id/ll_comment_container"
         android:orientation="horizontal"
         android:weightSum="4">

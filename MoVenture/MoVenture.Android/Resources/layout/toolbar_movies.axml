@@ -1,0 +1,35 @@
+
+<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_search_movie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/iv_search"
+            android:textColor="@android:color/white"
+            local:MvxBind="Text SearchTerm" />
+
+        <ImageButton
+            android:id="@+id/iv_search"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/baseline_search_black"
+            android:layout_alignParentEnd="true"
+            android:tint="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            local:MvxBind="Click FilterCommand" />
+    </RelativeLayout>
+</Toolbar>

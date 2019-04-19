@@ -16,6 +16,9 @@ namespace MoVenture.Android.Views
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.activity_login);
+
+            ViewModel.Email = "test_user@test.com";
+            ViewModel.Password = "hunter2";
         }
     }
 }

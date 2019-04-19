@@ -2,6 +2,7 @@
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform;
 using MoVenture.Services;
+using MoVenture.Interfaces;
 
 namespace MoVenture
 {

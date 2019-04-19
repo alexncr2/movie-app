@@ -6,8 +6,6 @@ using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MoVenture.ViewModels;
-using MoVenture.Interfaces;
-using MoVenture.Services;
 using MoVenture.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +28,11 @@ namespace MoVenture.Android.Views
 
             var MoviesRecyclerView = FindViewById<MvxRecyclerView>(Resource.Id.rv_movies);
 
-            MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Vertical, false));
+            MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Horizontal, false));
             MoviesRecyclerView.Adapter = new CustomMovieAdapter((IMvxAndroidBindingContext)BindingContext, OnRowClicked, ViewModel.Movies);
+
+            SnapHelper helper = new PagerSnapHelper();
+            helper.AttachToRecyclerView(MoviesRecyclerView);
         }
 
         public void OnRowClicked(int row)
@@ -60,7 +61,10 @@ namespace MoVenture.Android.Views
             var itemBindingContext = new MvxAndroidBindingContext(parent.Context, this.BindingContext.LayoutInflaterHolder);
             var view = InflateViewForHolder(parent, viewType, itemBindingContext);
 
-            return new CustomMoviesViewHolder(view, itemBindingContext);
+            return new CustomMoviesViewHolder(view, itemBindingContext)
+            {
+                Click = ItemClick
+            };
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -74,7 +78,7 @@ namespace MoVenture.Android.Views
             }
 
             var m = allMovies[position];
-            castedHolder.MovieCategoriesTextView.Text = m.GetCategories();
+            // castedHolder.MovieCategoriesTextView.Text = m.GetCategories();
             
             castedHolder.Container.Tag = position;
             try
@@ -89,9 +93,7 @@ namespace MoVenture.Android.Views
 
         void Container_Click(object sender, EventArgs e)
         {
-            #pragma warning disable IDE0019 // Use pattern matching
             var view = sender as View;
-            #pragma warning restore IDE0019 // Use pattern matching
             if (view == null)
             {
                 return;
@@ -112,7 +114,7 @@ namespace MoVenture.Android.Views
         {
             Container = itemView;
             MovieNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_title);
-            MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
+            // MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
         }
     }
 }

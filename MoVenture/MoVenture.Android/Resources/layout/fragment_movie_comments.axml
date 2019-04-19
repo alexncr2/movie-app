@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/tv_comments_error"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+		android:textSize="16sp"
+        local:MvxBind="Text ErrorInfo" />
+	
+    <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+        android:id="@+id/rv_comments_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        local:MvxBind="ItemsSource Comments"
+        local:MvxItemTemplate="@layout/comment_item"/>
+
+	<Refractored.Fab.FloatingActionButton
+		android:id="@+id/fab_add_comment"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+        local:MvxBind="Click AddCommentCommand" />
+
+
+</RelativeLayout>

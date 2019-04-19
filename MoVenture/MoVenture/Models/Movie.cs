@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,77 +7,36 @@ namespace MoVenture.Models
 {
     public class Movie
     {
+        [JsonProperty("id")]
         public Guid Id                      { get; set; }
+
+        [JsonProperty("title")]
         public string Title                 { get; set; }
+
+        [JsonProperty("description")]
         public string Description           { get; set; }
+
+        [JsonProperty("picture")]
         public string Picture               { get; set; }
+
+        [JsonProperty("trailer")]
         public string Trailer               { get; set; }
+
+        [JsonProperty("rating")]
         public float Rating                 { get; set; }
-        public DateTime LaunchDate          { get; set; }
+
+        [JsonProperty("status")]
+        public int Status { get; set; }
+
+        [JsonProperty("categories")]
         public List<Category> Categories    { get; set; }
+
+        [JsonProperty("actors")]
         public List<Actor> Actors           { get; set; }
+
+        [JsonProperty("comments")]
         public List<Comment> Comments       { get; set; }
-        public int Status                   { get; set; }
-
-        public Movie(string title, float rating, string description, List<Category> categs)
-        {
-            this.Id = Guid.NewGuid();
-            this.Title = title;
-            this.Rating = rating;
-            this.Description = description;
-            this.Categories = categs;
-
-            List<Actor> tmp = new List<Actor>
-            {
-                new Actor("BoJack", "Horseman"),
-                new Actor("Leonardo", "DiCaprio"),
-                new Actor("Jennifer", "Aniston")
-            };
-
-            List<Comment> tmp2 = new List<Comment>
-            {
-                new Comment("This movie good"),
-                new Comment("This movie no good"),
-                new Comment("is ok")
-            };
-            this.Actors = tmp;
-            this.Comments = tmp2;
-        }
-
-        public string GetCategories()
-        {
-            string tmp = "";
-            try
-            {
-                foreach (Category c in Categories)
-                {
-                    tmp += c.Name;
-                    tmp += ", ";
-                }
-                return tmp.Remove(tmp.Length - 2);
-            }
-            catch (NullReferenceException e)
-            {
-                return "No category info";
-            }
-        }
-
-        public string GetActors()
-        {
-            string tmp = "";
-            try
-            {
-                foreach (Actor a in Actors)
-                {
-                    tmp += a.FirstName;
-                    tmp += ", ";
-                }
-                return tmp.Remove(tmp.Length - 2);
-            }
-            catch (NullReferenceException e)
-            {
-                return "No actors info";
-            }
-        }
+        
+        
     }
 }

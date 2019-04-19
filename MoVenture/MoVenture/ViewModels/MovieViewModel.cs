@@ -3,10 +3,6 @@ using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace MoVenture.ViewModels
 {
@@ -55,48 +51,7 @@ namespace MoVenture.ViewModels
             Comments = Movie.Comments;
         }
 
-
-        public ICommand AddCommentCommand
-        {
-            get
-            {
-                return new MvxCommand(AddComment);
-            }
-        }
-
-        private void AddComment()
-        {
-            ShowViewModel<CommentViewModel>();
-            return;
-        }
-
-
-        public ICommand EditCommentCommand
-        {
-            get
-            {
-                return new MvxCommand(EditComment);
-            }
-        }
-
-        private void EditComment()
-        {
-            // ShowViewModel<CommentViewModel>();
-            return;
-        }
-
-        public ICommand DeleteCommentCommand
-        {
-            get
-            {
-                return new MvxCommand(DeleteComment);
-            }
-        }
-
-        private void DeleteComment()
-        {
-            return;
-        }
+        
         
     }
 }

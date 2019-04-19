@@ -1,0 +1,77 @@
+﻿[
+  {
+    "id": "368336da-9d27-41d5-926e-cb8040c1f3d6",
+    "title": "Star Wars: The Last Jedi",
+    "description": "Star Wars: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
+    "rating": "4.5",
+    "picture": "https://www.closeup-shop.com/media/oart_0/oart_s/oart_83320/thumbs/837176_2074604.jpg",
+    "trailer": "https://www.youtube.com/watch?v=nKQUgWCHRRs",
+    "status": "0",
+    "categories": [
+    ],
+    "actors": [
+    ],
+    "comments": [
+    ]
+  },
+  {
+    "id": "e6474959-db14-4367-990e-dfb7146c7d7a",
+    "title": "Blade Runner",
+    "description": "Blade Runner Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
+    "rating": "3.5",
+    "picture": "https://j.b5z.net/i/u/6127364/i/ec/blader889_i2.jpg",
+    "trailer": "https://www.youtube.com/watch?v=gCcx85zbxz4",
+    "status": "0",
+    "categories": [
+    ],
+    "actors": [
+    ],
+    "comments": [
+    ]
+  },
+  {
+    "id": "71ea7864-521c-4f2d-a349-70304e5f9f9d",
+    "title": "Pulp Fiction",
+    "description": "Pulp Fiction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
+    "rating": "4.7",
+    "picture": "https://imgc.allpostersimages.com/img/print/u-g-F13MQF0.jpg?w=550&h=550&p=0",
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "status": "0",
+    "categories": [
+    ],
+    "actors": [
+    ],
+    "comments": [
+    ]
+  },
+  {
+    "id": "25325f56-bca9-47f0-878a-c1a3b65b9f59",
+    "title": "Die Hard",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
+    "rating": "2.9",
+    "picture": "https://images-na.ssl-images-amazon.com/images/I/51ocIDju2XL.jpg",
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "status": "0",
+    "categories": [
+    ],
+    "actors": [
+    ],
+    "comments": [
+    ]
+  },
+  {
+    "id": "3f9b345c-f4f3-4cb0-9920-5a1542a40748",
+    "title": "The Shawshank Redemption",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
+    "rating": "5.0",
+    "picture": "https://i5.walmartimages.com/asr/f86fd399-8f1c-45f6-aedb-3b659be16973_1.ea348a5c27d6a8313675c2a083fe4042.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "status": "0",
+    "categories": [
+    ],
+    "actors": [
+    ],
+    "comments": [
+    ]
+  }
+]

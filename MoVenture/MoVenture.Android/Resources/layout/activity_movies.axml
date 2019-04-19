@@ -8,13 +8,20 @@
     android:layout_alignParentLeft="true"
     android:layout_centerVertical="true">
 
-    <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
-        android:id="@+id/rv_movies"
+	
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="8dp"
-        local:MvxBind="ItemsSource Movies; ItemClick ViewDetailsCommand"
-        local:MvxItemTemplate="@layout/movie_item" />
+        android:layout_height="wrap_content" >
+
+		<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+			android:id="@+id/rv_movies"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentLeft="true"
+			android:layout_margin="8dp"
+			local:MvxBind="ItemsSource Movies; ItemClick ViewDetailsCommand"
+			local:MvxItemTemplate="@layout/movie_item" />
+
+	</RelativeLayout>
 </RelativeLayout>
