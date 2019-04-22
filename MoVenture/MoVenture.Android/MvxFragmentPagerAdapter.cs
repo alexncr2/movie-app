@@ -21,6 +21,7 @@ namespace MoVenture.Android
         {
         }
 
+        // add movieid param
         public MvxFragmentPagerAdapter(
             Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments)
             : base(fragmentManager)
@@ -44,7 +45,13 @@ namespace MoVenture.Android
             {
                 fragInfo.CachedFragment = Fragment.Instantiate(_context, FragmentJavaName(fragInfo.FragmentType));
 
-                var request = new MvxViewModelRequest(fragInfo.ViewModelType, null, null);
+                var param = new Dictionary<string, string>
+                {
+                    { "movie", "1" }
+                };
+                var bundle = new MvxBundle(param);
+
+                var request = new MvxViewModelRequest(fragInfo.ViewModelType, bundle, null);
                 try
                 {
                     ((IMvxView)fragInfo.CachedFragment).ViewModel = Mvx.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);

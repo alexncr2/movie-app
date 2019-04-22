@@ -6,16 +6,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace MoVenture.Services
 {
     public class MovieService : IMovieService
     {
-        private static IEnumerable<Movie> allMovies;
+        private static List<Movie> allMovies;
 
         public Movie Get(Guid movieId)
         {
-            var movies = GetMovies(true);
+            var movies = allMovies;
             if (movies != null && movies.Any())
             {
                 return movies.FirstOrDefault(movie => movie.Id == movieId);
@@ -24,13 +25,14 @@ namespace MoVenture.Services
         }
 
 
-        public IEnumerable<Movie> GetMovies(bool useCache = false)
+        public async Task<List<Movie>> GetMovies(bool useCache = false)
         {
             if (useCache && allMovies != null)
             {
                 return allMovies;
             }
-            
+
+            /*
             using (var stream = typeof(MovieService).GetTypeInfo().Assembly.
                        GetManifestResourceStream("MoVenture.Resources.movie_data.json"))
             using (var reader = new StreamReader(stream))
@@ -38,7 +40,12 @@ namespace MoVenture.Services
                 var content = reader.ReadToEnd();
                 allMovies = JsonConvert.DeserializeObject<IEnumerable<Movie>>(content);
                 return allMovies;
-            }
+            }*/
+
+            var mpvies =  await HttpClientManager.GetMovieData();
+            allMovies = mpvies;
+
+            return mpvies;
         }
     }
 }

@@ -20,6 +20,12 @@ namespace MoVenture.Android.Views
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.activity_comments);
+            ViewModel.OnCancel = OnBackPressed;
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
         }
     }
 }

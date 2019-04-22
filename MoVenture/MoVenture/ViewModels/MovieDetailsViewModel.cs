@@ -21,6 +21,11 @@ namespace MoVenture.ViewModels
             set { mDescription = value; RaisePropertyChanged(() => Description); }
         }
 
-
+        protected override void InitFromBundle(IMvxBundle parameters)
+        {
+            base.InitFromBundle(parameters);
+            var dict = parameters.Data;
+            var desc = dict["movieId"];
+        }
     }
 }

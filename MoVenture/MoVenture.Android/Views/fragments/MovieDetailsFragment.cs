@@ -30,6 +30,7 @@ namespace MoVenture.Android.Views.fragments
             var movie = castedActivity.GetMovie();
 
             ViewModel.Description = movie.Description;
+            // ViewModel.Categories = movie.Categories;
 
             return rootView;
         }

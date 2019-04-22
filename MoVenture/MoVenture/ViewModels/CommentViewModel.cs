@@ -1,6 +1,7 @@
 ﻿using MoVenture.Interfaces;
 using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
+using System;
 using System.Windows.Input;
 
 namespace MoVenture.ViewModels
@@ -10,7 +11,7 @@ namespace MoVenture.ViewModels
         private readonly IMovieService mMovieService;
         
         private string mCommentMessage;
-
+        public Action OnCancel { get; set; }
 
         public CommentViewModel()
         {
@@ -48,8 +49,8 @@ namespace MoVenture.ViewModels
 
         private void Cancel(Movie movie)
         {
-            ShowViewModel<MovieViewModel>();
-            return;
+            Close(this);
+            // OnCancel?.Invoke();
         }
     }
 }
