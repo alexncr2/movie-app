@@ -16,7 +16,7 @@ namespace MoVenture.Services
 
         public Movie Get(Guid movieId)
         {
-            var movies = allMovies;
+            var movies = GetMoviesBackupFile(true);
             if (movies != null && movies.Any())
             {
                 return movies.FirstOrDefault(movie => movie.Id == movieId);
@@ -32,20 +32,27 @@ namespace MoVenture.Services
                 return allMovies;
             }
 
-            /*
+            var movies =  await HttpClientManager.GetMovieData();
+            allMovies = movies;
+
+            return movies;
+        }
+
+        public List<Movie> GetMoviesBackupFile(bool useCache = false)
+        {
+            if (useCache && allMovies != null)
+            {
+                return allMovies;
+            }
+
             using (var stream = typeof(MovieService).GetTypeInfo().Assembly.
                        GetManifestResourceStream("MoVenture.Resources.movie_data.json"))
             using (var reader = new StreamReader(stream))
             {
                 var content = reader.ReadToEnd();
-                allMovies = JsonConvert.DeserializeObject<IEnumerable<Movie>>(content);
+                allMovies = JsonConvert.DeserializeObject<IEnumerable<Movie>>(content).ToList();
                 return allMovies;
-            }*/
-
-            var mpvies =  await HttpClientManager.GetMovieData();
-            allMovies = mpvies;
-
-            return mpvies;
+            }
         }
     }
 }

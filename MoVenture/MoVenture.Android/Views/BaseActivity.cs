@@ -15,7 +15,7 @@ namespace MoVenture.Android.Views
             {
                 base.OnCreate(savedInstanceState);
             }
-            catch(System.Exception e)
+            catch(Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("BaseActivity\n" + e.ToString());
             }

@@ -16,7 +16,7 @@
     <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
         android:id="@+id/rv_actors_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         local:MvxBind="ItemsSource Actors"
         local:MvxItemTemplate="@layout/actor_item"/>

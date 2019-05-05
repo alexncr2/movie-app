@@ -25,20 +25,36 @@ namespace MoVenture.Android.Views
             var TabLayoutMovieOptions = FindViewById<TabLayout>(Resource.Id.tl_movie_menu);
             var ViewPagerOptionContent = FindViewById<ViewPager>(Resource.Id.vp_menu_content);
 
+            List<Actor> testActors = new List<Actor>
+            {
+                new Actor("Tony", "Stark"),
+                new Actor("Peter", "Parker"),
+                new Actor("Black", "Widow"),
+                new Actor("Steve", "Rogers"),
+                new Actor("Stan", "Lee")
+            };
+
+            List<Comment> testComments = new List<Comment>
+            {
+                new Comment("Nice movie"),
+                new Comment("Bad movie"),
+                new Comment("pretty good movie recommand 5/7"),
+                new Comment("is ok")
+            };
+
+            ViewModel.Movie.Actors = testActors;
+            ViewModel.Movie.Comments = testComments;
+
             ViewPagerOptionContent.Adapter = new MvxFragmentPagerAdapter(this, SupportFragmentManager,
                 new List<FragmentInfo>
             {
                     new FragmentInfo("Details", typeof(MovieDetailsFragment), typeof(MovieDetailsViewModel)),
                     new FragmentInfo("Comments", typeof(MovieCommentsFragment), typeof(MovieCommentsViewModel)),
                     new FragmentInfo("Actors", typeof(MovieActorsFragment), typeof(MovieActorsViewModel)),
-            });
+            }, ViewModel.Movie.Id);
 
             TabLayoutMovieOptions.SetupWithViewPager(ViewPagerOptionContent);
         }
-
-        public Movie GetMovie()
-        {
-            return ViewModel.Movie;
-        }
+        
     }
 }

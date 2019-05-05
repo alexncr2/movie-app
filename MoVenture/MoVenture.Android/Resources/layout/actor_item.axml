@@ -5,32 +5,45 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
     android:layout_centerVertical="true"
     android:layout_margin="8dp">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_movie_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        local:cardBackgroundColor="@color/colorCommentBg"
+        local:cardCornerRadius="16dp" >
+
+    <RelativeLayout
         android:id="@+id/ll_actor_container"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:gravity="center_horizontal">
 
-        <ImageView
-            android:id="@+id/iv_actor_image"
+		<ImageView
+			android:id="@+id/iv_actor_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:src="@drawable/ic_mr_button_connected_29_dark"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/mr_button_dark"/>
 
         <TextView
             android:id="@+id/tv_actor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/iv_actor_image"
             android:text="Actor Name"
-			android:textSize="20sp"
+            android:textSize="20sp"
             local:MvxBind="Text FullName"/>
 
-    </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

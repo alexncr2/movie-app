@@ -78,8 +78,10 @@ namespace MoVenture.Android.Views
             }
 
             var m = allMovies[position];
-            // castedHolder.MovieCategoriesTextView.Text = m.GetCategories();
-            
+
+            // castedHolder.MoviePosterImageView.ClipToOutline = true;
+
+
             castedHolder.Container.Tag = position;
             try
             {
@@ -107,13 +109,14 @@ namespace MoVenture.Android.Views
     public class CustomMoviesViewHolder : MvxRecyclerViewHolder
     {
         public TextView MovieNameTextView;
-        public TextView MovieCategoriesTextView;
+        public ImageView MoviePosterImageView;
         public View Container;
 
         public CustomMoviesViewHolder(View itemView, IMvxAndroidBindingContext context) : base(itemView, context)
         {
             Container = itemView;
             MovieNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_title);
+            MoviePosterImageView = itemView.FindViewById<ImageView>(Resource.Id.iv_movie_image);
             // MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
         }
     }

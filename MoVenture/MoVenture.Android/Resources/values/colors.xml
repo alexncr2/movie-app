@@ -5,7 +5,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
   
-    <color name="colorCommentBg">#808080</color>
+    <color name="colorCommentBg">#696969</color>
+    <color name="colorCommentOptions">#2F4F4F</color>
     <color name="colorBlue">#0000FF</color>
     <color name="white">#FFFFFF</color>
 </resources>

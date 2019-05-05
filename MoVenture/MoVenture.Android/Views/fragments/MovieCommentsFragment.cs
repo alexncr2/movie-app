@@ -8,6 +8,8 @@ using MoVenture.ViewModels;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.RecyclerView;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MoVenture.Android.Views.fragments
 {
@@ -27,16 +29,8 @@ namespace MoVenture.Android.Views.fragments
 
             var CommentsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_comments_list);
 
-            var castedActivity = Activity as MovieActivity;
-            var movie = castedActivity.GetMovie();
-
             CommentsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Vertical, false));
-            CommentsRecyclerView.Adapter = new CustomCommentAdapter((IMvxAndroidBindingContext)BindingContext, movie);
-
-            if (ViewModel.Comments == null)
-            {
-                ViewModel.ErrorInfo = "no comments available";
-            }
+            CommentsRecyclerView.Adapter = new CustomCommentAdapter((IMvxAndroidBindingContext)BindingContext, this.ViewModel.Comments);
 
             return rootView;
         }
@@ -45,11 +39,11 @@ namespace MoVenture.Android.Views.fragments
 
     public class CustomCommentAdapter : MvxRecyclerAdapter
     {
-        private readonly Movie Movie;
+        private readonly List<Comment> allComments;
 
-        public CustomCommentAdapter(IMvxAndroidBindingContext bindingContext, Movie movie) : base(bindingContext)
+        public CustomCommentAdapter(IMvxAndroidBindingContext bindingContext, IEnumerable<Comment> c) : base(bindingContext)
         {
-            this.Movie = movie;
+            allComments = c.ToList();
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

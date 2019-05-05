@@ -8,6 +8,9 @@ using MoVenture.ViewModels;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.RecyclerView;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MoVenture.Android.Views.fragments
 {
@@ -27,29 +30,27 @@ namespace MoVenture.Android.Views.fragments
 
             var ActorsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_actors_list);
 
-            var castedActivity = Activity as MovieActivity;
-            var movie = castedActivity.GetMovie();
-
-            ActorsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Horizontal, false));
-            ActorsRecyclerView.Adapter = new CustomCommentAdapter((IMvxAndroidBindingContext)BindingContext, movie);
-
-
-            if (ViewModel.Actors == null)
-            {
-                ViewModel.ErrorInfo = "no actors available";
-            }
+            ActorsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Vertical, false));
+            ActorsRecyclerView.Adapter = new CustomActorAdapter((IMvxAndroidBindingContext)BindingContext, this.ViewModel.Actors, OnRowClicked);
 
             return rootView;
+        }
+
+        public void OnRowClicked(int row)
+        {
+            var actor = ViewModel.Actors[row];
         }
     }
 
     public class CustomActorAdapter : MvxRecyclerAdapter
     {
-        private readonly Movie Movie;
+        private readonly List<Actor> allActors;
+        public Action<int> OnRowClicked { get; set; }
 
-        public CustomActorAdapter(IMvxAndroidBindingContext bindingContext, Movie movie) : base(bindingContext)
+        public CustomActorAdapter(IMvxAndroidBindingContext bindingContext, IEnumerable<Actor> a, Action<int> onRowClicked) : base(bindingContext)
         {
-            this.Movie = movie;
+            this.allActors = a.ToList();
+            OnRowClicked = onRowClicked;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -59,7 +60,10 @@ namespace MoVenture.Android.Views.fragments
             var itemBindingContext = new MvxAndroidBindingContext(parent.Context, this.BindingContext.LayoutInflaterHolder);
             var view = InflateViewForHolder(parent, viewType, itemBindingContext);
 
-            return new CustomActorViewHolder(view, itemBindingContext);
+            return new CustomActorViewHolder(view, itemBindingContext)
+            {
+                Click = ItemClick
+            };
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -72,7 +76,29 @@ namespace MoVenture.Android.Views.fragments
                 return;
             }
 
+            var a = allActors[position];
 
+            castedHolder.Container.Tag = position;
+            try
+            {
+                castedHolder.Container.Click -= Container_Click;
+            }
+            catch (Exception e)
+            {
+            }
+            castedHolder.Container.Click += Container_Click;
+        }
+
+        void Container_Click(object sender, EventArgs e)
+        {
+            var view = sender as View;
+            if (view == null)
+            {
+                return;
+            }
+
+            var position = Convert.ToInt32(view.Tag);
+            OnRowClicked?.Invoke(position);
         }
     }
 

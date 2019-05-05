@@ -7441,44 +7441,44 @@ namespace MoVenture.Android
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0e0053
-			public const int abc_background_cache_hint_selector_material_dark = 2131624019;
-			
 			// aapt resource value: 0x7f0e0054
-			public const int abc_background_cache_hint_selector_material_light = 2131624020;
+			public const int abc_background_cache_hint_selector_material_dark = 2131624020;
 			
 			// aapt resource value: 0x7f0e0055
-			public const int abc_btn_colored_borderless_text_material = 2131624021;
+			public const int abc_background_cache_hint_selector_material_light = 2131624021;
 			
 			// aapt resource value: 0x7f0e0056
-			public const int abc_btn_colored_text_material = 2131624022;
+			public const int abc_btn_colored_borderless_text_material = 2131624022;
 			
 			// aapt resource value: 0x7f0e0057
-			public const int abc_color_highlight_material = 2131624023;
+			public const int abc_btn_colored_text_material = 2131624023;
 			
 			// aapt resource value: 0x7f0e0058
-			public const int abc_hint_foreground_material_dark = 2131624024;
+			public const int abc_color_highlight_material = 2131624024;
 			
 			// aapt resource value: 0x7f0e0059
-			public const int abc_hint_foreground_material_light = 2131624025;
+			public const int abc_hint_foreground_material_dark = 2131624025;
+			
+			// aapt resource value: 0x7f0e005a
+			public const int abc_hint_foreground_material_light = 2131624026;
 			
 			// aapt resource value: 0x7f0e0004
 			public const int abc_input_method_navigation_guard = 2131623940;
 			
-			// aapt resource value: 0x7f0e005a
-			public const int abc_primary_text_disable_only_material_dark = 2131624026;
-			
 			// aapt resource value: 0x7f0e005b
-			public const int abc_primary_text_disable_only_material_light = 2131624027;
+			public const int abc_primary_text_disable_only_material_dark = 2131624027;
 			
 			// aapt resource value: 0x7f0e005c
-			public const int abc_primary_text_material_dark = 2131624028;
+			public const int abc_primary_text_disable_only_material_light = 2131624028;
 			
 			// aapt resource value: 0x7f0e005d
-			public const int abc_primary_text_material_light = 2131624029;
+			public const int abc_primary_text_material_dark = 2131624029;
 			
 			// aapt resource value: 0x7f0e005e
-			public const int abc_search_url_text = 2131624030;
+			public const int abc_primary_text_material_light = 2131624030;
+			
+			// aapt resource value: 0x7f0e005f
+			public const int abc_search_url_text = 2131624031;
 			
 			// aapt resource value: 0x7f0e0005
 			public const int abc_search_url_text_normal = 2131623941;
@@ -7489,29 +7489,29 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e0007
 			public const int abc_search_url_text_selected = 2131623943;
 			
-			// aapt resource value: 0x7f0e005f
-			public const int abc_secondary_text_material_dark = 2131624031;
-			
 			// aapt resource value: 0x7f0e0060
-			public const int abc_secondary_text_material_light = 2131624032;
+			public const int abc_secondary_text_material_dark = 2131624032;
 			
 			// aapt resource value: 0x7f0e0061
-			public const int abc_tint_btn_checkable = 2131624033;
+			public const int abc_secondary_text_material_light = 2131624033;
 			
 			// aapt resource value: 0x7f0e0062
-			public const int abc_tint_default = 2131624034;
+			public const int abc_tint_btn_checkable = 2131624034;
 			
 			// aapt resource value: 0x7f0e0063
-			public const int abc_tint_edittext = 2131624035;
+			public const int abc_tint_default = 2131624035;
 			
 			// aapt resource value: 0x7f0e0064
-			public const int abc_tint_seek_thumb = 2131624036;
+			public const int abc_tint_edittext = 2131624036;
 			
 			// aapt resource value: 0x7f0e0065
-			public const int abc_tint_spinner = 2131624037;
+			public const int abc_tint_seek_thumb = 2131624037;
 			
 			// aapt resource value: 0x7f0e0066
-			public const int abc_tint_switch_track = 2131624038;
+			public const int abc_tint_spinner = 2131624038;
+			
+			// aapt resource value: 0x7f0e0067
+			public const int abc_tint_switch_track = 2131624039;
 			
 			// aapt resource value: 0x7f0e0008
 			public const int accent_material_dark = 2131623944;
@@ -7570,11 +7570,14 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e004f
 			public const int colorAccent = 2131624015;
 			
-			// aapt resource value: 0x7f0e0051
-			public const int colorBlue = 2131624017;
+			// aapt resource value: 0x7f0e0052
+			public const int colorBlue = 2131624018;
 			
 			// aapt resource value: 0x7f0e0050
 			public const int colorCommentBg = 2131624016;
+			
+			// aapt resource value: 0x7f0e0051
+			public const int colorCommentOptions = 2131624017;
 			
 			// aapt resource value: 0x7f0e004d
 			public const int colorPrimary = 2131624013;
@@ -7585,8 +7588,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e0040
 			public const int design_bottom_navigation_shadow_color = 2131624000;
 			
-			// aapt resource value: 0x7f0e0067
-			public const int design_error = 2131624039;
+			// aapt resource value: 0x7f0e0068
+			public const int design_error = 2131624040;
 			
 			// aapt resource value: 0x7f0e0041
 			public const int design_fab_shadow_end_color = 2131624001;
@@ -7612,8 +7615,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e0048
 			public const int design_snackbar_background_color = 2131624008;
 			
-			// aapt resource value: 0x7f0e0068
-			public const int design_tint_password_toggle = 2131624040;
+			// aapt resource value: 0x7f0e0069
+			public const int design_tint_password_toggle = 2131624041;
 			
 			// aapt resource value: 0x7f0e0016
 			public const int dim_foreground_disabled_material_dark = 2131623958;
@@ -7741,11 +7744,11 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e003a
 			public const int switch_thumb_disabled_material_light = 2131623994;
 			
-			// aapt resource value: 0x7f0e0069
-			public const int switch_thumb_material_dark = 2131624041;
-			
 			// aapt resource value: 0x7f0e006a
-			public const int switch_thumb_material_light = 2131624042;
+			public const int switch_thumb_material_dark = 2131624042;
+			
+			// aapt resource value: 0x7f0e006b
+			public const int switch_thumb_material_light = 2131624043;
 			
 			// aapt resource value: 0x7f0e003b
 			public const int switch_thumb_normal_material_dark = 2131623995;
@@ -7759,8 +7762,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0e003e
 			public const int tooltip_background_light = 2131623998;
 			
-			// aapt resource value: 0x7f0e0052
-			public const int white = 2131624018;
+			// aapt resource value: 0x7f0e0053
+			public const int white = 2131624019;
 			
 			static Color()
 			{
@@ -9367,20 +9370,20 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a003f
 			public const int bottom = 2131361855;
 			
-			// aapt resource value: 0x7f0a009e
-			public const int bottomtab_navarea = 2131361950;
-			
 			// aapt resource value: 0x7f0a009f
-			public const int bottomtab_tabbar = 2131361951;
+			public const int bottomtab_navarea = 2131361951;
+			
+			// aapt resource value: 0x7f0a00a0
+			public const int bottomtab_tabbar = 2131361952;
 			
 			// aapt resource value: 0x7f0a0091
 			public const int btn_cancel_comment = 2131361937;
 			
-			// aapt resource value: 0x7f0a00a3
-			public const int btn_delete_comments = 2131361955;
+			// aapt resource value: 0x7f0a00a4
+			public const int btn_delete_comments = 2131361956;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int btn_edit_comment = 2131361954;
+			// aapt resource value: 0x7f0a00a3
+			public const int btn_edit_comment = 2131361955;
 			
 			// aapt resource value: 0x7f0a0094
 			public const int btn_login = 2131361940;
@@ -9418,14 +9421,14 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a003b
 			public const int collapseActionView = 2131361851;
 			
-			// aapt resource value: 0x7f0a00a8
-			public const int container = 2131361960;
+			// aapt resource value: 0x7f0a00a9
+			public const int container = 2131361961;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int contentPanel = 2131361896;
 			
-			// aapt resource value: 0x7f0a00a9
-			public const int coordinator = 2131361961;
+			// aapt resource value: 0x7f0a00aa
+			public const int coordinator = 2131361962;
 			
 			// aapt resource value: 0x7f0a006f
 			public const int custom = 2131361903;
@@ -9433,8 +9436,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a006e
 			public const int customPanel = 2131361902;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int cv_movie_container = 2131361980;
+			// aapt resource value: 0x7f0a009b
+			public const int cv_movie_container = 2131361947;
 			
 			// aapt resource value: 0x7f0a007c
 			public const int decor_content_parent = 2131361916;
@@ -9442,20 +9445,20 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0062
 			public const int default_activity_button = 2131361890;
 			
-			// aapt resource value: 0x7f0a00ab
-			public const int design_bottom_sheet = 2131361963;
+			// aapt resource value: 0x7f0a00ac
+			public const int design_bottom_sheet = 2131361964;
+			
+			// aapt resource value: 0x7f0a00b3
+			public const int design_menu_item_action_area = 2131361971;
 			
 			// aapt resource value: 0x7f0a00b2
-			public const int design_menu_item_action_area = 2131361970;
+			public const int design_menu_item_action_area_stub = 2131361970;
 			
 			// aapt resource value: 0x7f0a00b1
-			public const int design_menu_item_action_area_stub = 2131361969;
+			public const int design_menu_item_text = 2131361969;
 			
 			// aapt resource value: 0x7f0a00b0
-			public const int design_menu_item_text = 2131361968;
-			
-			// aapt resource value: 0x7f0a00af
-			public const int design_navigation_view = 2131361967;
+			public const int design_navigation_view = 2131361968;
 			
 			// aapt resource value: 0x7f0a0022
 			public const int disableHome = 2131361826;
@@ -9499,8 +9502,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0074
 			public const int expanded_menu = 2131361908;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int fab_add_comment = 2131361978;
+			// aapt resource value: 0x7f0a00bb
+			public const int fab_add_comment = 2131361979;
 			
 			// aapt resource value: 0x7f0a0052
 			public const int fill = 2131361874;
@@ -9514,11 +9517,11 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0056
 			public const int @fixed = 2131361878;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int flyoutcontent_appbar = 2131361972;
-			
 			// aapt resource value: 0x7f0a00b5
-			public const int flyoutcontent_recycler = 2131361973;
+			public const int flyoutcontent_appbar = 2131361973;
+			
+			// aapt resource value: 0x7f0a00b6
+			public const int flyoutcontent_recycler = 2131361974;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int forever = 2131361882;
@@ -9553,8 +9556,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int iv_actor_image = 2131361948;
+			// aapt resource value: 0x7f0a009d
+			public const int iv_actor_image = 2131361949;
 			
 			// aapt resource value: 0x7f0a00be
 			public const int iv_movie_image = 2131361982;
@@ -9565,8 +9568,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a00c0
 			public const int iv_star = 2131361984;
 			
-			// aapt resource value: 0x7f0a00a7
-			public const int largeLabel = 2131361959;
+			// aapt resource value: 0x7f0a00a8
+			public const int largeLabel = 2131361960;
 			
 			// aapt resource value: 0x7f0a004b
 			public const int left = 2131361867;
@@ -9583,14 +9586,14 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0063
 			public const int list_item = 2131361891;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int ll_actor_container = 2131361947;
+			// aapt resource value: 0x7f0a009c
+			public const int ll_actor_container = 2131361948;
 			
 			// aapt resource value: 0x7f0a008f
 			public const int ll_buttons_container = 2131361935;
 			
-			// aapt resource value: 0x7f0a00a0
-			public const int ll_comment_container = 2131361952;
+			// aapt resource value: 0x7f0a00a1
+			public const int ll_comment_container = 2131361953;
 			
 			// aapt resource value: 0x7f0a00bf
 			public const int ll_rating_container = 2131361983;
@@ -9700,8 +9703,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a002a
 			public const int multiply = 2131361834;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int navigation_header_container = 2131361966;
+			// aapt resource value: 0x7f0a00af
+			public const int navigation_header_container = 2131361967;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int never = 2131361853;
@@ -9754,11 +9757,11 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a00bd
 			public const int rl_cv_container = 2131361981;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int rv_actors_list = 2131361975;
+			// aapt resource value: 0x7f0a00b8
+			public const int rv_actors_list = 2131361976;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int rv_comments_list = 2131361977;
+			// aapt resource value: 0x7f0a00ba
+			public const int rv_comments_list = 2131361978;
 			
 			// aapt resource value: 0x7f0a0099
 			public const int rv_movies = 2131361945;
@@ -9847,14 +9850,14 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a00f7
 			public const int sliding_tabs = 2131362039;
 			
-			// aapt resource value: 0x7f0a00a6
-			public const int smallLabel = 2131361958;
+			// aapt resource value: 0x7f0a00a7
+			public const int smallLabel = 2131361959;
+			
+			// aapt resource value: 0x7f0a00ae
+			public const int snackbar_action = 2131361966;
 			
 			// aapt resource value: 0x7f0a00ad
-			public const int snackbar_action = 2131361965;
-			
-			// aapt resource value: 0x7f0a00ac
-			public const int snackbar_text = 2131361964;
+			public const int snackbar_text = 2131361965;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int snap = 2131361861;
@@ -9904,8 +9907,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a006b
 			public const int textSpacerNoTitle = 2131361899;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int text_input_password_toggle = 2131361971;
+			// aapt resource value: 0x7f0a00b4
+			public const int text_input_password_toggle = 2131361972;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int textinput_counter = 2131361812;
@@ -9937,8 +9940,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0070
 			public const int topPanel = 2131361904;
 			
-			// aapt resource value: 0x7f0a00aa
-			public const int touch_outside = 2131361962;
+			// aapt resource value: 0x7f0a00ab
+			public const int touch_outside = 2131361963;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int transition_current_scene = 2131361807;
@@ -9958,26 +9961,26 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a0095
 			public const int tv_account = 2131361941;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int tv_actor_name = 2131361949;
+			// aapt resource value: 0x7f0a009e
+			public const int tv_actor_name = 2131361950;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int tv_actors_error = 2131361974;
+			// aapt resource value: 0x7f0a00b7
+			public const int tv_actors_error = 2131361975;
 			
-			// aapt resource value: 0x7f0a00a1
-			public const int tv_comment_msg = 2131361953;
+			// aapt resource value: 0x7f0a00a2
+			public const int tv_comment_msg = 2131361954;
 			
 			// aapt resource value: 0x7f0a008d
 			public const int tv_comment_title = 2131361933;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int tv_comments_error = 2131361976;
+			// aapt resource value: 0x7f0a00b9
+			public const int tv_comments_error = 2131361977;
 			
-			// aapt resource value: 0x7f0a00a4
-			public const int tv_isEdited = 2131361956;
+			// aapt resource value: 0x7f0a00a5
+			public const int tv_isEdited = 2131361957;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int tv_movie_description = 2131361979;
+			// aapt resource value: 0x7f0a00bc
+			public const int tv_movie_description = 2131361980;
 			
 			// aapt resource value: 0x7f0a00c1
 			public const int tv_movie_rating = 2131361985;
@@ -9985,8 +9988,8 @@ namespace MoVenture.Android
 			// aapt resource value: 0x7f0a00c2
 			public const int tv_movie_title = 2131361986;
 			
-			// aapt resource value: 0x7f0a00a5
-			public const int tv_savedBy = 2131361957;
+			// aapt resource value: 0x7f0a00a6
+			public const int tv_savedBy = 2131361958;
 			
 			// aapt resource value: 0x7f0a0096
 			public const int tv_title_detail = 2131361942;

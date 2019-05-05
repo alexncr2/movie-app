@@ -1,6 +1,7 @@
 ﻿using MoVenture.Interfaces;
 using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -62,17 +63,20 @@ namespace MoVenture.ViewModels
         public override void Start()
         {
             base.Start();
+            
+            // Task.Run(async () => await GetMovies().ConfigureAwait(false)).ConfigureAwait(false);
 
-            Task.Run(async() => await GetMovies().ConfigureAwait(false) ).ConfigureAwait(false);
-            }
+            Movies = new ObservableCollection<Movie>(mMovieService.GetMoviesBackupFile(true));
+            mMoviesCopy = mMovies;
+        }
 
         private async Task GetMovies()
         {
-            List<Movie> dbMovies = await mMovieService.GetMovies(true);
 
+            List<Movie> dbMovies = await mMovieService.GetMovies(true);
+            
             Movies = new ObservableCollection<Movie>(dbMovies);
             mMoviesCopy = mMovies;
-
         }
 
         private void ViewDetails(Movie movie)

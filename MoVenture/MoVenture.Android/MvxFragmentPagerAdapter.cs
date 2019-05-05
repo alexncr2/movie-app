@@ -6,6 +6,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.App;
 using Java.Lang;
+using MoVenture.Android.Views.fragments;
+using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.Platform;
@@ -15,6 +17,7 @@ namespace MoVenture.Android
     public class MvxFragmentPagerAdapter : FragmentPagerAdapter
     {
         private readonly Context _context;
+        private readonly string movieId;
 
         protected MvxFragmentPagerAdapter(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
@@ -22,12 +25,12 @@ namespace MoVenture.Android
         }
 
         // add movieid param
-        public MvxFragmentPagerAdapter(
-            Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments)
+        public MvxFragmentPagerAdapter(Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments, Guid mId)
             : base(fragmentManager)
         {
             _context = context;
             Fragments = fragments;
+            this.movieId = mId.ToString();
         }
 
         public IEnumerable<FragmentInfo> Fragments { get; private set; }
@@ -44,10 +47,10 @@ namespace MoVenture.Android
             if (fragInfo.CachedFragment == null)
             {
                 fragInfo.CachedFragment = Fragment.Instantiate(_context, FragmentJavaName(fragInfo.FragmentType));
-
+                
                 var param = new Dictionary<string, string>
                 {
-                    { "movie", "1" }
+                    { "movieId", movieId }
                 };
                 var bundle = new MvxBundle(param);
 
@@ -58,7 +61,7 @@ namespace MoVenture.Android
                 }
                 catch(System.Exception e)
                 {
-                    System.Diagnostics.Debug.WriteLine("why? " + e.ToString());
+                    System.Diagnostics.Debug.WriteLine("MvxFragmentPagerAdapter? " + e.ToString());
                 }
             }
 

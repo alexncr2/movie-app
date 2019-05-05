@@ -11,11 +11,12 @@ namespace MoVenture.Models
         public string LastName { get; set; }
         public int Status { get; set; }
 
-        public Actor(string firstName, string lastName)
+        public Actor(string fname, string lname)
         {
             this.Id = Guid.NewGuid();
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            this.FirstName = fname;
+            this.LastName = lname;
+            this.Status = 0;
         }
 
         public string FullName

@@ -12,8 +12,6 @@ namespace MoVenture.ViewModels
 
         private Movie mMovie;
         private Guid mMovieId;
-        private List<Actor> mActors;
-        private List<Comment> mComments;
 
         public MovieViewModel(IMovieService movieService)
         {
@@ -26,18 +24,6 @@ namespace MoVenture.ViewModels
             set { mMovie = value; RaisePropertyChanged(() => Movie); }
         }
 
-        public List<Actor> Actors
-        {
-            get { return mActors; }
-            set { SetProperty(ref mActors, value); }
-        }
-
-        public List<Comment> Comments
-        {
-            get { return mComments; }
-            set { SetProperty(ref mComments, value); }
-        }
-
         public void Init(Guid movieId)
         {
             mMovieId = movieId;
@@ -47,8 +33,6 @@ namespace MoVenture.ViewModels
         public override void Start()
         {
             base.Start();
-            Actors = Movie.Actors;
-            Comments = Movie.Comments;
         }
 
         

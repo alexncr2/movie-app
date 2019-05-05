@@ -9,6 +9,7 @@ namespace MoVenture.Interfaces
     public interface IMovieService
     {
         Task<List<Movie>> GetMovies(bool useCache);
+        List<Movie> GetMoviesBackupFile(bool useCache);
         Movie Get(Guid movieId);
     }
 }
