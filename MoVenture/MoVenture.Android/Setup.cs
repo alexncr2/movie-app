@@ -20,18 +20,12 @@ namespace MoVenture.Android
             return new App();
         }
 
-        protected override void InitializeFirstChance()
-        {
-            Mvx.ConstructAndRegisterSingleton<INativeValidationService, NativeValidationService>();
-            Mvx.ConstructAndRegisterSingleton<IMovieService, MovieService>();
-            base.InitializeFirstChance();
-        }
-
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
             Mvx.RegisterType<INativeValidationService, NativeValidationService>();
             Mvx.RegisterType<IMovieService, MovieService>();
+            Mvx.LazyConstructAndRegisterSingleton<IWebService>(() => new WebService(ApplicationContext));
 
         }
     }

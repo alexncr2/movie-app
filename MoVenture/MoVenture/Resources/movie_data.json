@@ -8,8 +8,34 @@
     "trailer": "https://www.youtube.com/watch?v=nKQUgWCHRRs",
     "status": "0",
     "categories": [
+      {
+        "id": "368336bb-9d27-41d5-926e-cb8040c1f3d6",
+        "name": "Action",
+        "status": "0"
+      },
+      {
+        "id": "54ec8317-6436-476e-a91a-fd9c0e08a7f1",
+        "name": "SF",
+        "status": "0"
+      }
     ],
     "actors": [
+      {
+        "id": "54ec5517-6436-476e-a91a-fd9c0e08a7f1",
+        "firstName": "BoJack",
+        "lastName": "Horseman",
+        "description": "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultr",
+        "picture": "http://s3.amazonaws.com/sbstatesman/wp-content/uploads/2017/09/05160718/21369573_1462137293902218_3167238876832024828_n.png",
+        "status": "0"
+      },
+      {
+        "id": "54ec5517-6776-476e-a91a-fd9c0e08a7f1",
+        "firstName": "Tony",
+        "lastName": "Stark",
+        "description": "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultr",
+        "picture": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Robert_Downey_Jr._as_Iron_Man_in_Avengers_Infinity_War.jpg/220px-Robert_Downey_Jr._as_Iron_Man_in_Avengers_Infinity_War.jpg",
+        "status": "0"
+      }
     ],
     "comments": [
     ]
@@ -23,6 +49,11 @@
     "trailer": "https://www.youtube.com/watch?v=gCcx85zbxz4",
     "status": "0",
     "categories": [
+      {
+        "id": "368336bb-9d27-41d5-926e-cb8040c1f3d6",
+        "name": "SF",
+        "status": "0"
+      }
     ],
     "actors": [
     ],

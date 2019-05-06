@@ -4,31 +4,31 @@ using MoVenture.Services;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace MoVenture.ViewModels
 {
     public class MovieDetailsViewModel : MvxViewModel
     {
         private readonly IMovieService mMovieService;
+        private readonly IWebService mWebService;
+
+        private ICommand mWatchTrailerCommand;
 
         private string mDescription;
-        private List<Category> mCategories;
+        private string mTrailer;
 
-        public MovieDetailsViewModel(IMovieService movieService)
+
+        public MovieDetailsViewModel(IMovieService movieService, IWebService webService)
         {
             mMovieService = movieService;
+            mWebService = webService;
         }
 
         public string Description
         {
             get { return mDescription; }
             set { mDescription = value; RaisePropertyChanged(() => Description); }
-        }
-
-        public List<Category> Categories
-        {
-            get { return mCategories; }
-            set { mCategories = value; RaisePropertyChanged(() => Categories); }
         }
 
         protected override void InitFromBundle(IMvxBundle parameters)
@@ -40,8 +40,24 @@ namespace MoVenture.ViewModels
 
             var movie = mMovieService.Get(Guid.Parse(mId));
             Description = movie.Description;
-            Categories = movie.Categories;
+            mTrailer = movie.Trailer;
+        }
 
+        public ICommand WatchTrailerCommand
+        {
+            get
+            {
+                if (mWatchTrailerCommand == null)
+                {
+                    mWatchTrailerCommand = new MvxCommand(WatchTrailer);
+                }
+                return mWatchTrailerCommand;
+            }
+        }
+
+        private void WatchTrailer()
+        {
+            mWebService.OpenUrl(mTrailer);
         }
     }
 }

@@ -36,7 +36,28 @@ namespace MoVenture.Models
 
         [JsonProperty("comments")]
         public List<Comment> Comments       { get; set; }
-        
-        
+
+        public string AllCategories
+        {
+            get { return GetAllCategories(); }
+        }
+
+        public string DisplayLength
+        {
+            get { return ""; }
+        }
+
+        private string GetAllCategories()
+        {
+            string tmp = "";
+            foreach(Category c in Categories)
+            {
+                tmp += c.Name;
+                tmp += " / ";
+            }
+            tmp = tmp.Remove(tmp.Length - 2);
+            return tmp;
+        }
+
     }
 }

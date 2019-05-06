@@ -111,7 +111,7 @@ namespace MoVenture.Android.Views.fragments
         public CustomActorViewHolder(View itemView, IMvxAndroidBindingContext context) : base(itemView, context)
         {
             Container = itemView;
-            ActorNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_actor_name);
+            ActorNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_actor_firstname);
         }
     }
 

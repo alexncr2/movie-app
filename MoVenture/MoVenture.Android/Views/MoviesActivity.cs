@@ -1,6 +1,5 @@
 ﻿using System;
 using Android.App;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
@@ -9,6 +8,7 @@ using MoVenture.ViewModels;
 using MoVenture.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Support.V7.Widget;
 
 namespace MoVenture.Android.Views
 {
@@ -79,7 +79,7 @@ namespace MoVenture.Android.Views
 
             var m = allMovies[position];
 
-            // castedHolder.MoviePosterImageView.ClipToOutline = true;
+            castedHolder.MoviePosterImageView.ClipToOutline = true;
 
 
             castedHolder.Container.Tag = position;
@@ -117,7 +117,8 @@ namespace MoVenture.Android.Views
             Container = itemView;
             MovieNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_title);
             MoviePosterImageView = itemView.FindViewById<ImageView>(Resource.Id.iv_movie_image);
-            // MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
+            var card = itemView.FindViewById<CardView>(Resource.Id.cv_movie_container);
+                // MovieCategoriesTextView = itemView.FindViewById<TextView>(Resource.Id.tv_movie_categories);
         }
     }
 }

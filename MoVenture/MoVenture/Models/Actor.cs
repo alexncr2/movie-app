@@ -9,15 +9,9 @@ namespace MoVenture.Models
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Description { get; set; }
+        public string Picture { get; set; }
         public int Status { get; set; }
-
-        public Actor(string fname, string lname)
-        {
-            this.Id = Guid.NewGuid();
-            this.FirstName = fname;
-            this.LastName = lname;
-            this.Status = 0;
-        }
 
         public string FullName
         {
