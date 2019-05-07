@@ -104,6 +104,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MvxFragmentPagerAdapter.cs" />
     <Compile Include="Services\WebService.cs" />
+    <Compile Include="Views\AddMovieActivity.cs" />
     <Compile Include="Views\BaseActivity.cs" />
     <Compile Include="Views\CommentActivity.cs" />
     <Compile Include="Views\fragments\MovieActorsFragment.cs" />
@@ -243,6 +244,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\movie_card_background.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_round.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\toolbar_with_back.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_add_movie.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -6,30 +6,30 @@
     android:layout_height="wrap_content"
     android:layout_alignParentStart="true"
     android:layout_centerVertical="true"
-    android:layout_margin="8dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp" >
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_actor_container"
         android:layout_width="160dp"
-        android:layout_height="190dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        local:cardBackgroundColor="@color/colorCommentBg"
+        local:cardBackgroundColor="@color/colorMoventureBlue"
         local:cardCornerRadius="16dp" >
 
         <RelativeLayout
             android:id="@+id/rl_actor_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 			android:layout_centerHorizontal="true">
 
             <Mvx.MvxImageView
                 android:id="@+id/iv_actor_image"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:layout_centerHorizontal="true"
-                android:scaleType="centerCrop"
+				android:scaleType="centerCrop"
 				local:MvxBind="ImageUrl Picture"/>
 			
             <TextView
@@ -52,6 +52,7 @@
 				android:layout_centerHorizontal="true"
 				android:layout_marginLeft="16dp"
 				android:layout_marginRight="16dp"
+				android:paddingBottom="4dp"
                 android:text="Actor"
                 android:textSize="16sp"
                 local:MvxBind="Text LastName"/>
@@ -64,6 +65,8 @@
 		android:id="@+id/tv_actor_description"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
 		android:layout_toEndOf="@id/cv_actor_container"
 		local:MvxBind="Text Description"/>
 

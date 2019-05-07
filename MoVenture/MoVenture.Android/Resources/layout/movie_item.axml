@@ -29,9 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-				android:background="@drawable/movie_card_background"
                 local:MvxBind="ImageUrl Picture" />
-
 
             <RelativeLayout
                 android:id="@+id/ll_rating_container"

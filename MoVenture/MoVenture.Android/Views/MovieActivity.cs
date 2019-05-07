@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
+using Android.Widget;
 using MoVenture.Android.Views.fragments;
 using MoVenture.Models;
 using MoVenture.ViewModels;
@@ -22,18 +23,12 @@ namespace MoVenture.Android.Views
         {
             SetContentView(Resource.Layout.activity_movie);
 
+            var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
+            toolbarTitle.Text = "Movie Details";
+
             var TabLayoutMovieOptions = FindViewById<TabLayout>(Resource.Id.tl_movie_menu);
             var ViewPagerOptionContent = FindViewById<ViewPager>(Resource.Id.vp_menu_content);
-
-            List<Comment> testComments = new List<Comment>
-            {
-                new Comment("Nice movie"),
-                new Comment("Bad movie"),
-                new Comment("pretty good movie recommand 5/7"),
-                new Comment("is ok")
-            };
             
-            ViewModel.Movie.Comments = testComments;
 
             ViewPagerOptionContent.Adapter = new MvxFragmentPagerAdapter(this, SupportFragmentManager,
                 new List<FragmentInfo>

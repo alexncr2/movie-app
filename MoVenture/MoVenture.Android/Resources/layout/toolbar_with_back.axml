@@ -1,0 +1,22 @@
+<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+		android:background="@drawable/abc_ic_ab_back_material"
+        local:MvxBind="Click GoBackCommand" />
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:gravity="center_horizontal"
+        android:layout_marginStart="-40dp"
+		android:text="MoVenture"
+        android:textColor="@android:color/white" />
+</Toolbar>

@@ -76,6 +76,8 @@ namespace MoVenture.Android.Views.fragments
                 return;
             }
 
+            castedHolder.ActorImageView.ClipToOutline = true;
+
             var a = allActors[position];
 
             castedHolder.Container.Tag = position;
@@ -105,13 +107,13 @@ namespace MoVenture.Android.Views.fragments
 
     public class CustomActorViewHolder : MvxRecyclerViewHolder
     {
-        public TextView ActorNameTextView;
+        public ImageView ActorImageView;
         public View Container;
 
         public CustomActorViewHolder(View itemView, IMvxAndroidBindingContext context) : base(itemView, context)
         {
             Container = itemView;
-            ActorNameTextView = itemView.FindViewById<TextView>(Resource.Id.tv_actor_firstname);
+            ActorImageView = itemView.FindViewById<ImageView>(Resource.Id.iv_actor_image);
         }
     }
 

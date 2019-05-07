@@ -5,6 +5,7 @@ namespace MoVenture.ViewModels
 {
     public class RegisterViewModel : MvxViewModel
     {
+        private string mUsername;
         private string mEmail;
         private string mPassword;
         private string mPassword2;
@@ -24,6 +25,12 @@ namespace MoVenture.ViewModels
         {
             get { return mEmail; }
             set { mEmail = value; RaisePropertyChanged(() => Email); }
+        }
+
+        public string Username
+        {
+            get { return mUsername; }
+            set { mUsername = value; RaisePropertyChanged(() => Username); }
         }
 
         public string Password

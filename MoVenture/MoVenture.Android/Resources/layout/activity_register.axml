@@ -15,6 +15,15 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Username"
+            local:MvxBind="Text Username"/>
+
+        <EditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,29 +47,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:hint="Repeat Password"
+            android:hint="Confirm Password"
             local:MvxBind="Text SecondPassword"/>
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Register"
-            local:MvxBind="Click RegisterCommand"/>
-
         <TextView
-            android:id="@+id/tv_account"
+            android:id="@+id/tv_have_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:text="I already have an account"
+            android:text="Already have an account?"
             local:MvxBind="Click HasAccountCommand" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="48dp"
+		android:background="@drawable/btn_round"
+		android:layout_alignParentBottom="true"
+        android:text="Sign Up"
+        local:MvxBind="Click RegisterCommand"/>
 </RelativeLayout>

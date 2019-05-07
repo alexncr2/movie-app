@@ -8,10 +8,16 @@
     android:layout_alignParentLeft="true"
     android:layout_centerVertical="true">
 
+    <include
+        android:id="@+id/movies_toolbar_search"
+        layout="@layout/toolbar_movies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 	
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+		android:layout_below="@id/movies_toolbar_search">
 
 		<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
 			android:id="@+id/rv_movies"

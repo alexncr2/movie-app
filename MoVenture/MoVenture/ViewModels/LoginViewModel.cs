@@ -10,6 +10,7 @@ namespace MoVenture.ViewModels
         private string mPassword;
         private ICommand mLoginCommand;
         private ICommand mCreateAccountCommand;
+        private ICommand mForgotPasswordCommand;
         private ICoreValidationService mCoreValidationService;
         private INativeValidationService mNativeValidationService;
 
@@ -55,6 +56,18 @@ namespace MoVenture.ViewModels
             }
         }
 
+        public ICommand ForgotPasswordCommand
+        {
+            get
+            {
+                if (mForgotPasswordCommand == null)
+                {
+                    mForgotPasswordCommand = new MvxCommand(ForgotPassword);
+                }
+                return mForgotPasswordCommand;
+            }
+        }
+
         private void DecideIfActive()
         {
             if (mCoreValidationService.IsLoginValid(mEmail, mPassword))
@@ -68,6 +81,11 @@ namespace MoVenture.ViewModels
         private void SwitchAuthMode()
         {
             ShowViewModel<RegisterViewModel>();
+        }
+
+        private void ForgotPassword()
+        {
+
         }
 
     }

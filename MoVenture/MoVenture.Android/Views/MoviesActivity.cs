@@ -27,7 +27,6 @@ namespace MoVenture.Android.Views
             SetContentView(Resource.Layout.activity_movies);
 
             var MoviesRecyclerView = FindViewById<MvxRecyclerView>(Resource.Id.rv_movies);
-
             MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this, RecyclerView.Horizontal, false));
             MoviesRecyclerView.Adapter = new CustomMovieAdapter((IMvxAndroidBindingContext)BindingContext, OnRowClicked, ViewModel.Movies);
 

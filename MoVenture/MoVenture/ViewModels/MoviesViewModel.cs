@@ -20,6 +20,7 @@ namespace MoVenture.ViewModels
 
         private ICommand mViewDetailsCommand;
         private ICommand mFilterCommand;
+        private ICommand mAddMovieCommand;
 
         public MoviesViewModel(IMovieService movieService)
         {
@@ -60,6 +61,15 @@ namespace MoVenture.ViewModels
             }
         }
 
+        public ICommand AddMovieCommand
+        {
+            get
+            {
+                mAddMovieCommand = mAddMovieCommand ?? new MvxCommand(AddMovieDetails);
+                return mAddMovieCommand;
+            }
+        }
+
         public override void Start()
         {
             base.Start();
@@ -95,6 +105,11 @@ namespace MoVenture.ViewModels
             {
                 Movies = mMoviesCopy;
             }
+        }
+
+        private void AddMovieDetails()
+        {
+            ShowViewModel<AddMovieViewModel>();
         }
     }
 }

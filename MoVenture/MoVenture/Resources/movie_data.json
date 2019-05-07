@@ -1,5 +1,74 @@
 ﻿[
   {
+    "id": "312336da-9d27-41d5-926e-cb8040c1f3d6",
+    "title": "Spider-Man: Far from Home",
+    "description": "Peter Parker and his friends go on a European vacation, where Peter finds himself agreeing to help Nick Fury uncover the mystery of several elemental creature attacks, creating havoc across the continent.",
+    "rating": "4.5",
+    "picture": "https://cdn.guidingtech.com/media/assets/Cool-Spider-Man-Far-From-Home-HD-wallpapers-5.jpg",
+    "trailer": "https://www.youtube.com/watch?v=LFoz8ZJWmPs",
+    "status": "0",
+    "categories": [
+      {
+        "id": "111136bb-9d27-41d5-926e-cb8040c1f3d6",
+        "name": "Action",
+        "status": "0"
+      },
+      {
+        "id": "54ec8317-6436-476e-a91a-fd9c0e08a1f1",
+        "name": "Adventure",
+        "status": "0"
+      },
+      {
+        "id": "54ec8317-6436-111e-a91a-fd9c0e08a1f1",
+        "name": "Comedy",
+        "status": "0"
+      }
+    ],
+    "actors": [
+      {
+        "id": "54ec5517-6436-476e-a11a-fd9c0e08a2f1",
+        "firstName": "Tom",
+        "lastName": "Holland",
+        "description": "Thomas Stanley Holland was born in Kingston-upon-Thames, Surrey, to Nicola Elizabeth (Frost), a photographer, and Dominic Holland (Dominic Anthony Holland), who is a comedian and author. His paternal grandparents were from the Isle of Man and Ireland, respectively.",
+        "picture": "https://m.media-amazon.com/images/M/MV5BNTAzMzA3NjQwOF5BMl5BanBnXkFtZTgwMDUzODQ5MTI@._V1_UY317_CR23,0,214,317_AL_.jpg",
+        "status": "0"
+      },
+      {
+        "id": "54ec5517-6776-476e-a21a-fd9c0e08a7f1",
+        "firstName": "Zendaya",
+        "lastName": "Coleman",
+        "description": "Zendaya is an American actress and singer born in Oakland, California. She began her career appearing as a child model working for Macy's, Mervyns and Old Navy. She was a backup dancer before gaining prominence for her role as Rocky Blue on the Disney Channel sitcom Shake It Up",
+        "picture": "https://timedotcom.files.wordpress.com/2014/06/zendaya1.jpg",
+        "status": "0"
+      },
+      {
+        "id": "54ec5517-1111-476e-a21a-fd9c0e08a7f1",
+        "firstName": "Samuel L.",
+        "lastName": "Jackson",
+        "description": "Samuel L. Jackson is an American producer and highly prolific actor, having appeared in over 100 films, including Die Hard: With a Vengeance (1995), Unbreakable (2000), Shaft (2000), Formula 51 (2001), Black Snake Moan (2006), Snakes on a Plane (2006), and the Star Wars prequel trilogy (1999-2005), as well as the Marvel Cinematic Universe.",
+        "picture": "https://m.media-amazon.com/images/M/MV5BMTQ1NTQwMTYxNl5BMl5BanBnXkFtZTYwMjA1MzY1._V1_UX214_CR0,0,214,317_AL_.jpg",
+        "status": "0"
+      }
+    ],
+    "comments": [
+      {
+        "id": "54ec2237-6776-476e-a21a-fd9c0e08a7f1",
+        "message": "In this universe, Tom holland warns us about spoilers, multiverse indeed",
+        "status": "0"
+      },
+      {
+        "id": "54ec2232-6776-476e-a21a-fd9c0e08a7f1",
+        "message": "Poor Uncle Ben is really getting screwed over by the mcu. Ironman took his one job.",
+        "status": "0"
+      },
+      {
+        "id": "22ec2222-6776-476e-a21a-fd9c0e08a7f1",
+        "message": "Imagine that one guy who hasn’t seen endgame skips 10 seconds ahead because he thought there would be be marvel logo.. May he rest in peace.﻿",
+        "status": "0"
+      }
+    ]
+  },
+  {
     "id": "368336da-9d27-41d5-926e-cb8040c1f3d6",
     "title": "Star Wars: The Last Jedi",
     "description": "Star Wars: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
@@ -15,7 +84,7 @@
       },
       {
         "id": "54ec8317-6436-476e-a91a-fd9c0e08a7f1",
-        "name": "SF",
+        "name": "Sci-Fi",
         "status": "0"
       }
     ],
@@ -51,7 +120,12 @@
     "categories": [
       {
         "id": "368336bb-9d27-41d5-926e-cb8040c1f3d6",
-        "name": "SF",
+        "name": "Sci-Fi",
+        "status": "0"
+      },
+      {
+        "id": "368336bb-9d27-41d5-926e-cb8040c1f3d6",
+        "name": "Thriller",
         "status": "0"
       }
     ],
@@ -65,7 +139,7 @@
     "title": "Pulp Fiction",
     "description": "Pulp Fiction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
     "rating": "4.7",
-    "picture": "https://imgc.allpostersimages.com/img/print/u-g-F13MQF0.jpg?w=550&h=550&p=0",
+    "picture": "https://elegirhoy.com/uploads/fichas-eventos-imagenes/Pulp-Fiction1.png",
     "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
     "status": "0",
     "categories": [

@@ -26,7 +26,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="24dp"
-		android:src="@drawable/ic_plus"
+		android:src="@drawable/rating_star"
+		android:background="@color/colorMoventureBlue"
 		android:layout_alignParentEnd="true"
 		android:layout_alignParentBottom="true"
         local:MvxBind="Click AddCommentCommand" />

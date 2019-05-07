@@ -5,10 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <include
+        android:id="@+id/movies_toolbar_back"
+        layout="@layout/toolbar_with_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 	<RelativeLayout
 		android:id="@+id/rl_movie_detail_container"
 		android:layout_width="match_parent"
-		android:layout_height="200dp" >
+		android:layout_height="200dp"
+		android:layout_below="@id/movies_toolbar_back">
 		
 
         <Mvx.MvxImageView
@@ -22,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 			android:background="@color/colorMoventureBlue"
-			android:alpha="0.6" />
+			android:alpha="0.8" />
 
 		<TextView
 			android:id="@+id/tv_title_detail"

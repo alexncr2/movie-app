@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/movies_toolbar_back"
+        layout="@layout/toolbar_with_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+	<LinearLayout
+		android:id="@+id/rl_add_movie_conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginBottom="16dp"
+		android:layout_marginLeft="32dp"
+		android:layout_marginRight="32dp"
+		android:orientation="vertical"
+		android:layout_below="@id/movies_toolbar_back">
+
+		<EditText
+			android:id="@+id/et_movie_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:hint="Movie Title"
+            local:MvxBind="Text Title" />
+
+		<EditText
+			android:id="@+id/et_movie_description"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:hint="Movie Description"
+            local:MvxBind="Text Description" />
+			
+		<EditText
+			android:id="@+id/et_movie_picture"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:hint="Movie Picture" 
+            local:MvxBind="Text Picture"/>
+
+		<EditText
+			android:id="@+id/et_movie_trailer"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:hint="Movie Trailer"
+            local:MvxBind="Text Trailer" />
+
+	</LinearLayout>
+
+	<Button 
+		android:id="@+id/btn_add_movie"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="32dp"
+		android:layout_marginRight="32dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginBottom="32dp"
+		android:layout_alignParentBottom="true"
+		android:background="@drawable/btn_round"
+		android:text="Save Movie" />
+</RelativeLayout>
