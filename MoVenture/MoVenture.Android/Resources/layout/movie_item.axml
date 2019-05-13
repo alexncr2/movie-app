@@ -80,6 +80,7 @@
 			android:ellipsize="end"
 			android:maxLines="2"
 			android:text="Sample Movie Title"
+			android:textColor="@color/colorMoventureBlue"
 			android:gravity="center_horizontal"
 			local:MvxBind="Text Title" />
 
@@ -90,6 +91,7 @@
 			android:ellipsize="end"
 			android:maxLines="2"
 			android:text="Sample Movie Genre"
+			android:textColor="@color/colorMoventureBlue"
 			android:gravity="center_horizontal"
 			local:MvxBind="Text AllCategories" />
 
@@ -99,6 +101,7 @@
 			android:layout_height="wrap_content"
 			android:ellipsize="end"
 			android:maxLines="2"
+			android:textColor="@color/colorMoventureBlue"
 			android:gravity="center_horizontal"
 			local:MvxBind="Text DisplayLength" />
 	

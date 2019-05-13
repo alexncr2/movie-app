@@ -14,7 +14,7 @@
 		android:layout_marginBottom="16dp"
 		android:layout_marginLeft="16dp"
 		android:layout_marginRight="16dp"
-		android:textColor="@color/foreground_material_dark"
+		android:textColor="@color/colorMoventureBlue"
 		android:text="Sample Description"
 		android:textSize="16sp"
 		local:MvxBind="Text Description"/>
@@ -30,6 +30,7 @@
 		android:layout_below="@id/tv_movie_description"
 		android:background="@drawable/btn_round"
 		android:textSize="16sp"
+		android:textColor="@color/white"
 		android:text="Watch Trailer"
 		local:MvxBind="Click WatchTrailerCommand"/>
 

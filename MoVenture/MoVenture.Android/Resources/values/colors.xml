@@ -5,7 +5,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
   
-    <color name="colorMoventureBlue">#2c8686</color>
+    <color name="colorMoventureBlue">#141459</color>
+    <color name="colorMoventureBlueLight">#444471</color>
     <color name="colorCommentBg">#696969</color>
     <color name="colorCommentOptions">#2F4F4F</color>
     <color name="colorBlue">#0000FF</color>

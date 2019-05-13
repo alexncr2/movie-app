@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:local="http://schemas.android.com/apk/res-auto"
@@ -5,14 +6,6 @@
     android:layout_width="match_parent"
 	android:background="@color/colorMoventureBlue"
     android:layout_height="48dp">
-
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-		android:textColor="@color/white"
-		android:src="@drawable/abc_ic_ab_back_material"
-		android:backgroundTint="@color/colorMoventureBlue"
-        local:MvxBind="Click GoBackCommand" />
 
     <TextView
         android:id="@+id/toolbar_title"

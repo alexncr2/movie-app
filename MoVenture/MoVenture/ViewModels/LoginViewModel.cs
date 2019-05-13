@@ -1,5 +1,7 @@
-﻿using MoVenture.ViewModels;
+﻿using MoVenture.Services;
+using MoVenture.ViewModels;
 using MvvmCross.Core.ViewModels;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MoVenture.ViewModels
@@ -40,6 +42,7 @@ namespace MoVenture.ViewModels
                 {
                     mLoginCommand = new MvxCommand(DecideIfActive);
                 }
+
                 return mLoginCommand;
             }
         }
@@ -72,10 +75,24 @@ namespace MoVenture.ViewModels
         {
             if (mCoreValidationService.IsLoginValid(mEmail, mPassword))
             {
+                // Task.Run(async () => await LoginAsyncTask().ConfigureAwait(false)).ConfigureAwait(false);
                 ShowViewModel<MoviesViewModel>();
                 return;
             }
             mNativeValidationService.ShowNativeMessage("Login attempt invalid");
+        }
+
+        private async Task LoginAsyncTask()
+        {
+            var user = await HttpClientManager.Login(Email, Password);
+            if (user == null)
+            {
+                return;
+            }
+            else
+            {
+                ShowViewModel<MoviesViewModel>();
+            }
         }
 
         private void SwitchAuthMode()

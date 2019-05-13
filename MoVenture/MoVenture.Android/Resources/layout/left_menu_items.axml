@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<menu xmlns:android="http://schemas.android.com/apk/res/android">  
+  
+  <group>  
+    <item  
+        android:id="@+id/nav_my_movies"
+        android:title="My Films" />  
+    <item  
+        android:id="@+id/nav_review_ratings"
+        android:title="Review Ratings" />  
+    <item  
+        android:id="@+id/nav_add_movie"
+        android:title="Add Film" />  
+    <item  
+        android:id="@+id/nav_logout"
+        android:title="Log out" />  
+  </group>  
+  
+</menu>  

@@ -8,7 +8,7 @@ using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
 {
-    [Activity(Label = "CommentActivity")]
+    [Activity(Label = "CommentActivity", Theme = "@style/MainTheme.Base")]
     public class CommentActivity : BaseActivity
     {
         public new CommentViewModel ViewModel

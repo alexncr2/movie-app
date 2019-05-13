@@ -13,7 +13,7 @@ using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
 {
-    [Activity]
+    [Activity(Theme = "@style/MainTheme.Base")]
     public class AddMovieActivity : BaseActivity
     {
         public new AddMovieViewModel ViewModel

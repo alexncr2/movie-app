@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
-    android:layout_centerVertical="true">
+    android:layout_height="match_parent">
+    <!-- The Main Content View -->
 
-    <include
-        android:id="@+id/movies_toolbar_search"
-        layout="@layout/toolbar_movies"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-	
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:layout_below="@id/movies_toolbar_search">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true">
 
-		<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
-			android:id="@+id/rv_movies"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_alignParentStart="true"
-			android:layout_alignParentLeft="true"
-			android:layout_margin="8dp"
-			local:MvxBind="ItemsSource Movies; ItemClick ViewDetailsCommand"
-			local:MvxItemTemplate="@layout/movie_item" />
+        <include
+            android:id="@+id/movies_toolbar_search"
+            layout="@layout/toolbar_movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-	</RelativeLayout>
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movies_toolbar_search">
+
+            <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+                android:id="@+id/rv_movies"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                local:MvxBind="ItemsSource Movies; ItemClick ViewDetailsCommand"
+                local:MvxItemTemplate="@layout/movie_item" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+    <!-- The Left Navigation Drawer -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        local:headerLayout="@layout/nav_header_main"
+        local:menu="@layout/left_menu_items"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true" >
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

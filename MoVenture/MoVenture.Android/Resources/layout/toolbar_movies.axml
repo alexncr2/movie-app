@@ -1,49 +1,46 @@
-<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_movies"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorMoventureBlue"
     android:orientation="vertical">
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:focusable="true" 
-		android:focusableInTouchMode="true">
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
 
         <EditText
             android:id="@+id/et_search_movie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/iv_search"
-			android:hint="Search for ..."
+            android:layout_toEndOf="@+id/iv_search"
+            android:backgroundTint="@color/white"
+            android:hint="Search for ..."
             android:textColor="@android:color/white"
+            android:textColorHint="@color/white"
             local:MvxBind="Text SearchTerm" />
-		
+
         <ImageButton
             android:id="@+id/iv_search"
             style="?android:attr/buttonBarStyle"
             android:layout_width="40dp"
             android:layout_height="40dp"
-			android:layout_margin="8dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
             android:padding="8dp"
-			android:layout_centerVertical="true"
-			android:layout_toStartOf="@+id/iv_add_movie"
-			android:src="@android:drawable/ic_menu_search"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_search"
             android:tint="@android:color/white"
             local:MvxBind="Click FilterCommand" />
 
-        <ImageButton
-            android:id="@+id/iv_add_movie"
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-			android:layout_margin="8dp"
-            android:padding="8dp"
-			android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-			android:src="@android:drawable/ic_input_add"
-            android:tint="@android:color/white"
-            local:MvxBind="Click AddMovieCommand" />
     </RelativeLayout>
 </Toolbar>

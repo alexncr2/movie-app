@@ -108,6 +108,7 @@
 		android:ellipsize="end"
 		android:maxLines="10"
 		android:text="sample_text"
+		android:textColor="@color/colorMoventureBlue"
 		local:MvxBind="Text Message" />
 
 

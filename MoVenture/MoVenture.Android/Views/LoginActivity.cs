@@ -4,7 +4,7 @@ using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
 {
-    [Activity(MainLauncher = true)]
+    [Activity(MainLauncher = true, Theme = "@style/MainTheme.Base")]
     public class LoginActivity : BaseActivity
     {
         public new LoginViewModel ViewModel
@@ -15,6 +15,7 @@ namespace MoVenture.Android.Views
 
         protected override void OnViewModelSet()
         {
+            base.OnViewModelSet();
             SetContentView(Resource.Layout.activity_login);
 
             ViewModel.Email = "test_user@test.com";

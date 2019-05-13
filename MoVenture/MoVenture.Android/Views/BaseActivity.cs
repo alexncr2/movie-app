@@ -15,7 +15,6 @@ namespace MoVenture.Android.Views
             try
             {
                 base.OnCreate(savedInstanceState);
-                // ActionBar.Hide();
                 CustomApplication.Instance.CurrentActivity = this;
             }
             catch(Exception e)

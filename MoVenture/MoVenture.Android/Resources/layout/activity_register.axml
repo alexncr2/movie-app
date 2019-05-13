@@ -3,15 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
-    android:layout_centerVertical="true"
-    android:padding="16dp">
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/movies_toolbar_back"
+        layout="@layout/toolbar_only"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentLeft="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+		android:layout_below="@id/movies_toolbar_back"
+		android:padding="16dp"
         android:orientation="vertical">
 
         <EditText
@@ -21,6 +27,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="Username"
+			android:textColor="@color/colorMoventureBlue"
+			android:textColorHint="@color/colorMoventureBlueLight"
+			android:backgroundTint="@color/colorMoventureBlue"
             local:MvxBind="Text Username"/>
 
         <EditText
@@ -30,6 +39,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="Email"
+			android:textColor="@color/colorMoventureBlue"
+			android:textColorHint="@color/colorMoventureBlueLight"
+			android:backgroundTint="@color/colorMoventureBlue"
             local:MvxBind="Text Email"/>
 
         <EditText
@@ -39,6 +51,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="Password"
+			android:textColor="@color/colorMoventureBlue"
+			android:textColorHint="@color/colorMoventureBlueLight"
+			android:backgroundTint="@color/colorMoventureBlue"
             local:MvxBind="Text Password"/>
 
         <EditText
@@ -48,6 +63,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="Confirm Password"
+			android:textColor="@color/colorMoventureBlue"
+			android:textColorHint="@color/colorMoventureBlueLight"
+			android:backgroundTint="@color/colorMoventureBlue"
             local:MvxBind="Text SecondPassword"/>
 
         <TextView
@@ -60,6 +78,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="Already have an account?"
+			android:textColor="@color/colorMoventureBlue"
             local:MvxBind="Click HasAccountCommand" />
 
     </LinearLayout>
@@ -75,5 +94,6 @@
 		android:background="@drawable/btn_round"
 		android:layout_alignParentBottom="true"
         android:text="Sign Up"
+		android:textColor="@color/white"
         local:MvxBind="Click RegisterCommand"/>
 </RelativeLayout>

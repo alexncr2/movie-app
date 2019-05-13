@@ -42,6 +42,7 @@
 				android:layout_marginRight="16dp"
                 android:text="Actor"
                 android:textSize="16sp"
+				android:textColor="@color/white"
                 local:MvxBind="Text FirstName"/>
 
             <TextView
@@ -55,6 +56,7 @@
 				android:paddingBottom="4dp"
                 android:text="Actor"
                 android:textSize="16sp"
+				android:textColor="@color/white"
                 local:MvxBind="Text LastName"/>
 
         </RelativeLayout>
@@ -68,6 +70,7 @@
 		android:layout_marginLeft="8dp"
 		android:layout_marginRight="8dp"
 		android:layout_toEndOf="@id/cv_actor_container"
+		android:textColor="@color/colorMoventureBlue"
 		local:MvxBind="Text Description"/>
 
 </RelativeLayout>
