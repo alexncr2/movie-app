@@ -11,4 +11,7 @@
     <color name="colorCommentOptions">#2F4F4F</color>
     <color name="colorBlue">#0000FF</color>
     <color name="white">#FFFFFF</color>
+  
+    <color name="duskYellow">#FFD700</color>
+    <color name="lightGrey">#bdbdbd</color>
 </resources>

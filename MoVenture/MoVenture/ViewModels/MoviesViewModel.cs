@@ -1,5 +1,5 @@
-﻿using MoVenture.Interfaces;
-using MoVenture.Models;
+﻿using MoVenture.Models;
+using MoVenture.Interfaces;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,8 +14,8 @@ namespace MoVenture.ViewModels
     {
         private readonly IMovieService mMovieService;
 
-        private ObservableCollection<Movie> mMovies;
-        private ObservableCollection<Movie> mMoviesCopy;
+        private ObservableCollection<MinifiedMovie> mMovies;
+        private ObservableCollection<MinifiedMovie> mMoviesCopy;
         private string mSearchTerm;
 
         private ICommand mViewDetailsCommand;
@@ -27,7 +27,7 @@ namespace MoVenture.ViewModels
             mMovieService = movieService;
         }
 
-        public ObservableCollection<Movie> Movies
+        public ObservableCollection<MinifiedMovie> Movies
         {
             get { return mMovies; }
             set { SetProperty(ref mMovies, value); }
@@ -46,7 +46,7 @@ namespace MoVenture.ViewModels
             {
                 if (mViewDetailsCommand == null)
                 {
-                    mViewDetailsCommand = new MvxCommand<Movie>(ViewDetails);
+                    mViewDetailsCommand = new MvxCommand<MinifiedMovie>(ViewDetails);
                 }
                 return mViewDetailsCommand;
             }
@@ -73,23 +73,16 @@ namespace MoVenture.ViewModels
         public override void Start()
         {
             base.Start();
-            
-            // Task.Run(async () => await GetMovies().ConfigureAwait(false)).ConfigureAwait(false);
 
-            Movies = new ObservableCollection<Movie>(mMovieService.GetMoviesBackupFile(true));
-            mMoviesCopy = mMovies;
+            //Task.Run(async () => await mMovieService.GetMovies(false).ConfigureAwait(false)).ConfigureAwait(false);
+            // Task.Run(async () => await GetData().ConfigureAwait(false)).ConfigureAwait(false);
+            
+            Movies = new ObservableCollection<MinifiedMovie>(MovieHelper.MinMovies);
+            
+            
         }
 
-        private async Task GetMovies()
-        {
-
-            List<Movie> dbMovies = await mMovieService.GetMovies(true);
-            
-            Movies = new ObservableCollection<Movie>(dbMovies);
-            mMoviesCopy = mMovies;
-        }
-
-        private void ViewDetails(Movie movie)
+        private void ViewDetails(MinifiedMovie movie)
         {
             ShowViewModel<MovieViewModel>(new { movieId = movie.Id });
         }
@@ -99,7 +92,7 @@ namespace MoVenture.ViewModels
             if (!string.IsNullOrWhiteSpace(mSearchTerm))
             {
                 var filteredFriends = Movies.Where(fr => fr.Title.ToLower().Contains(mSearchTerm.ToLower())).ToList();
-                Movies = new ObservableCollection<Movie>(filteredFriends);
+                Movies = new ObservableCollection<MinifiedMovie>(filteredFriends);
             }
             else
             {

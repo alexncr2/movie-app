@@ -17,6 +17,9 @@ namespace MoVenture.Android.Views.fragments
     [Register("moventure.android.views.fragments.MovieActorsFragment")]
     public class MovieActorsFragment : MvxFragment<MovieActorsViewModel>
     {
+
+        MvxRecyclerView ActorsRecyclerView;
+
         public MovieActorsFragment()
         {
 
@@ -28,13 +31,20 @@ namespace MoVenture.Android.Views.fragments
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var rootView = this.BindingInflate(Resource.Layout.fragment_movie_actors, null);
 
-            var ActorsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_actors_list);
-
-            ActorsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Vertical, false));
-            ActorsRecyclerView.Adapter = new CustomActorAdapter((IMvxAndroidBindingContext)BindingContext, this.ViewModel.Actors, OnRowClicked);
+            ActorsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_actors_list);
 
             return rootView;
         }
+
+
+        public override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+
+            ActorsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Vertical, false));
+            ActorsRecyclerView.Adapter = new CustomActorAdapter((IMvxAndroidBindingContext)BindingContext, this.ViewModel.Actors, OnRowClicked);
+        }
+
 
         public void OnRowClicked(int row)
         {
@@ -44,10 +54,10 @@ namespace MoVenture.Android.Views.fragments
 
     public class CustomActorAdapter : MvxRecyclerAdapter
     {
-        private readonly List<Actor> allActors;
+        private readonly List<ActorModel> allActors;
         public Action<int> OnRowClicked { get; set; }
 
-        public CustomActorAdapter(IMvxAndroidBindingContext bindingContext, IEnumerable<Actor> a, Action<int> onRowClicked) : base(bindingContext)
+        public CustomActorAdapter(IMvxAndroidBindingContext bindingContext, IEnumerable<ActorModel> a, Action<int> onRowClicked) : base(bindingContext)
         {
             this.allActors = a.ToList();
             OnRowClicked = onRowClicked;

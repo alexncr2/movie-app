@@ -1,4 +1,5 @@
-﻿using MoVenture.Interfaces;
+﻿using MoVenture.Models;
+using MoVenture.Interfaces;
 using MoVenture.Models;
 using MoVenture.Services;
 using MvvmCross.Core.ViewModels;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
+using Newtonsoft.Json;
 
 namespace MoVenture.ViewModels
 {
@@ -36,14 +38,21 @@ namespace MoVenture.ViewModels
             set { SetProperty(ref mError, value); }
         }
 
+
+        public void Init (Comment NewComment)
+        {
+            Comments.Add(NewComment);
+        }
+
+
         protected override void InitFromBundle(IMvxBundle parameters)
         {
             base.InitFromBundle(parameters);
 
             var bundleDictionary = parameters.Data;
-            var mId = bundleDictionary["movieId"];
+            var mId = bundleDictionary["movie"];
 
-            var movie = mMovieService.Get(Guid.Parse(mId));
+            var movie = JsonConvert.DeserializeObject<Movie>(mId);
             foreach (var a in movie.Comments)
             {
                 Comments.Add(a);

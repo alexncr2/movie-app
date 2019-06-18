@@ -16,6 +16,9 @@ namespace MoVenture.Android.Views.fragments
     [Register("moventure.android.views.fragments.MovieCommentsFragment")]
     public class MovieCommentsFragment : MvxFragment<MovieCommentsViewModel>
     {
+
+        MvxRecyclerView CommentsRecyclerView;
+
         public MovieCommentsFragment()
         {
 
@@ -27,12 +30,18 @@ namespace MoVenture.Android.Views.fragments
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             var rootView = this.BindingInflate(Resource.Layout.fragment_movie_comments, null);
 
-            var CommentsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_comments_list);
+            CommentsRecyclerView = rootView.FindViewById<MvxRecyclerView>(Resource.Id.rv_comments_list);
+
+            return rootView;
+        }
+
+        public override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+
 
             CommentsRecyclerView.SetLayoutManager(new LinearLayoutManager(Activity, RecyclerView.Vertical, false));
             CommentsRecyclerView.Adapter = new CustomCommentAdapter((IMvxAndroidBindingContext)BindingContext, this.ViewModel.Comments);
-
-            return rootView;
         }
     }
 
@@ -66,6 +75,8 @@ namespace MoVenture.Android.Views.fragments
                 return;
             }
 
+            var context = BindingContext; // instead of allComments list
+            castedHolder.CommentRatingBar.Rating = allComments[position].Rating;
 
         }
     }
@@ -74,12 +85,14 @@ namespace MoVenture.Android.Views.fragments
     public class CustomCommentViewHolder : MvxRecyclerViewHolder
     {
         public TextView CommentMessageTextView;
+        public RatingBar CommentRatingBar;
         public View Container;
 
         public CustomCommentViewHolder(View itemView, IMvxAndroidBindingContext context) : base(itemView, context)
         {
             Container = itemView;
             CommentMessageTextView = itemView.FindViewById<TextView>(Resource.Id.tv_comment_msg);
+            CommentRatingBar = itemView.FindViewById<RatingBar>(Resource.Id.received_stars_ratingbar);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Android.App;
+using Android.Widget;
 using MoVenture.ViewModels;
 
 namespace MoVenture.Android.Views
@@ -21,11 +22,17 @@ namespace MoVenture.Android.Views
         {
             SetContentView(Resource.Layout.activity_comments);
             ViewModel.OnCancel = OnBackPressed;
-        }
 
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
+
+            RatingBar ratingbar = FindViewById<RatingBar>(Resource.Id.rb_user_rating);
+
+            ratingbar.RatingBarChange += (o, e) => {
+                // Toast.MakeText(this, "New Rating: " + ratingbar.Rating.ToString(), ToastLength.Short).Show();
+                ViewModel.Rating = ratingbar.Rating;
+            };
+
+            
         }
+        
     }
 }

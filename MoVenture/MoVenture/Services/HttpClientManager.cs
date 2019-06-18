@@ -12,9 +12,20 @@ namespace MoVenture.Services
 {
     public static class HttpClientManager
     {
-        public static async Task<List<Movie>> GetMovieData()
+
+        public static async Task<Movie> GetMovieById(Guid id)
         {
-            return await GetGenericData<List<Movie>>("");
+            return await GetGenericData<Movie>("http://192.168.0.111:140/api/Movie?id=" + id);
+        }
+
+        public static async Task<List<MinifiedMovie>> GetUserMovieData(string email)
+        {
+            return await GetGenericData<List<MinifiedMovie>>("http://192.168.0.111:140/api/User?email=" + email);
+        }
+
+        public static async Task<UserData> GetUserDataData(string email)
+        {
+            return await GetGenericData<UserData>("http://192.168.0.111:140/api/User?email=" + email);
         }
 
         // private get generic
@@ -50,11 +61,11 @@ namespace MoVenture.Services
             return data;
         }
         
-
+        /*
         public static async Task<UserWithToken> Login(string username, string password)
         {
             return await ExecutePostFormUrlEncodedAsync<UserWithToken>("http://", username, password);
-        }
+        }*/
 
         public static async Task<TOutput> ExecutePostFormUrlEncodedAsync<TOutput>(string url, string username, string password)
                 where TOutput : class, new()

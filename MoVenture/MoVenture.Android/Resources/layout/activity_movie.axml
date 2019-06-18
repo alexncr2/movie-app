@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            local:MvxBind="ImageUrl Movie.Picture" />
+            local:MvxBind="ImageUrl Movie.PictureUrl" />
 
 		<View
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
 			android:textColor="@color/white"
 			android:textSize="28sp"
 			android:textStyle="bold"
-			local:MvxBind="Text Movie.Title" />
+			local:MvxBind="Text MovieTitle" />
 	
 		<TextView
 			android:id="@+id/tv_categories_detail"
@@ -71,7 +71,7 @@
 			android:text="sample_text"
 			android:textColor="@color/white"
 			android:textSize="20sp"
-			local:MvxBind="Text Movie.DisplayLength" />
+			local:MvxBind="Text Movie.LaunchDate" />
 
 		</RelativeLayout>
 

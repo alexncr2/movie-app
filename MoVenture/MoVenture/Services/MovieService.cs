@@ -1,5 +1,5 @@
-﻿using MoVenture.Interfaces;
-using MoVenture.Models;
+﻿using MoVenture.Models;
+using MoVenture.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ namespace MoVenture.Services
     public class MovieService : IMovieService
     {
         private static List<Movie> allMovies;
+        private static List<MinifiedMovie> allMinifiedMovies;
 
         public Movie Get(Guid movieId)
         {
@@ -25,15 +26,15 @@ namespace MoVenture.Services
         }
 
 
-        public async Task<List<Movie>> GetMovies(bool useCache = false)
+        public async Task<List<MinifiedMovie>> GetMovies(bool useCache = false)
         {
             if (useCache && allMovies != null)
             {
-                return allMovies;
+                return allMinifiedMovies;
             }
 
-            var movies =  await HttpClientManager.GetMovieData();
-            allMovies = movies;
+            var movies =  await HttpClientManager.GetUserMovieData("email@gmail.com");
+            allMinifiedMovies = movies;
 
             return movies;
         }

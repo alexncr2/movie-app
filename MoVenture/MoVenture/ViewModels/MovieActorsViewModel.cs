@@ -1,10 +1,11 @@
-﻿using MoVenture.Interfaces;
-using MoVenture.Models;
+﻿using MoVenture.Models;
+using MoVenture.Interfaces;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MoVenture.ViewModels
 {
@@ -12,16 +13,16 @@ namespace MoVenture.ViewModels
     {
         private readonly IMovieService mMovieService;
 
-        private ObservableCollection<Actor> mActors;
+        private ObservableCollection<ActorModel> mActors;
         private string mError;
 
         public MovieActorsViewModel(IMovieService movieService)
         {
             mMovieService = movieService;
-            mActors = new ObservableCollection<Actor>();
+            mActors = new ObservableCollection<ActorModel>();
         }
 
-        public ObservableCollection<Actor> Actors
+        public ObservableCollection<ActorModel> Actors
         {
             get { return mActors; }
             set { SetProperty(ref mActors, value); }
@@ -38,9 +39,9 @@ namespace MoVenture.ViewModels
             base.InitFromBundle(parameters);
 
             var bundleDictionary = parameters.Data;
-            var mId = bundleDictionary["movieId"];
+            var mId = bundleDictionary["movie"];
 
-            var movie = mMovieService.Get(Guid.Parse(mId));
+            var movie = JsonConvert.DeserializeObject<Movie>(mId);
             foreach (var a in movie.Actors)
             {
                 Actors.Add(a);

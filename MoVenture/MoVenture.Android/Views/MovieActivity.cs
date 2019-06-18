@@ -36,7 +36,7 @@ namespace MoVenture.Android.Views
                     new FragmentInfo("Details", typeof(MovieDetailsFragment), typeof(MovieDetailsViewModel)),
                     new FragmentInfo("Comments", typeof(MovieCommentsFragment), typeof(MovieCommentsViewModel)),
                     new FragmentInfo("Actors", typeof(MovieActorsFragment), typeof(MovieActorsViewModel)),
-            }, ViewModel.Movie.Id);
+            }, ViewModel.Movie);
 
             TabLayoutMovieOptions.SetupWithViewPager(ViewPagerOptionContent);
         }

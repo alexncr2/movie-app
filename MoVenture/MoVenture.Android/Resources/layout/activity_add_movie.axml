@@ -71,16 +71,33 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_add_movie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/btn_round"
-        android:text="Save Movie"
-        android:textColor="@color/white" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginLeft="32dp"
+		android:layout_marginRight="32dp"
+		android:layout_marginBottom="32dp"
+		android:orientation="vertical">
+	
+		<Button
+			android:id="@+id/btn_add_movie"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="16dp"
+			android:background="@drawable/btn_round"
+			android:text="Save Movie"
+			android:textColor="@color/white" />
+
+		<Button
+			android:id="@+id/btn_add_movie_cancel"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="16dp"
+			android:background="@drawable/btn_round"
+			android:text="Cancel"
+			android:textColor="@color/white"
+			local:MvxBind="Click AddMovieGoBackCommand"/>
+
+	</LinearLayout>
 </RelativeLayout>

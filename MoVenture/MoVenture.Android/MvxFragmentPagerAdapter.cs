@@ -11,13 +11,14 @@ using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.Platform;
+using Newtonsoft.Json;
 
 namespace MoVenture.Android
 {
     public class MvxFragmentPagerAdapter : FragmentPagerAdapter
     {
         private readonly Context _context;
-        private readonly string movieId;
+        private readonly Movie movie;
 
         protected MvxFragmentPagerAdapter(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
@@ -25,12 +26,12 @@ namespace MoVenture.Android
         }
 
         // add movieid param
-        public MvxFragmentPagerAdapter(Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments, Guid mId)
+        public MvxFragmentPagerAdapter(Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments, Movie mv)
             : base(fragmentManager)
         {
             _context = context;
             Fragments = fragments;
-            this.movieId = mId.ToString();
+            this.movie = mv;
         }
 
         public IEnumerable<FragmentInfo> Fragments { get; private set; }
@@ -50,7 +51,7 @@ namespace MoVenture.Android
                 
                 var param = new Dictionary<string, string>
                 {
-                    { "movieId", movieId }
+                    { "movie", JsonConvert.SerializeObject(movie) }
                 };
                 var bundle = new MvxBundle(param);
 

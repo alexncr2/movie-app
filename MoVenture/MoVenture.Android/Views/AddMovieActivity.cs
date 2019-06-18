@@ -25,6 +25,7 @@ namespace MoVenture.Android.Views
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.activity_add_movie);
+
         }
 
 

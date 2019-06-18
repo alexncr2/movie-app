@@ -2,6 +2,7 @@
 using MoVenture.Models;
 using MoVenture.Services;
 using MvvmCross.Core.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
@@ -36,11 +37,11 @@ namespace MoVenture.ViewModels
             base.InitFromBundle(parameters);
 
             var bundleDictionary = parameters.Data;
-            var mId = bundleDictionary["movieId"];
+            var mId = bundleDictionary["movie"];
 
-            var movie = mMovieService.Get(Guid.Parse(mId));
+            var movie = JsonConvert.DeserializeObject<Movie>(mId);
             Description = movie.Description;
-            mTrailer = movie.Trailer;
+            mTrailer = movie.TrailerUrl;
         }
 
         public ICommand WatchTrailerCommand

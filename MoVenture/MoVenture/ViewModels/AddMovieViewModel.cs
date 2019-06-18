@@ -14,8 +14,8 @@ namespace MoVenture.ViewModels
         private string mDescription;
         private string mPictureUrl;
         private string mTrailerUrl;
-        private ObservableCollection<Actor> mActors;
-        private ObservableCollection<Category> mCategories;
+        private ObservableCollection<ActorModel> mActors;
+        private ObservableCollection<CategoryModel> mCategories;
         private ICommand mSaveMovieCommand;
         private ICommand mBackToMovies;
 
@@ -48,19 +48,19 @@ namespace MoVenture.ViewModels
             set { mTrailerUrl = value; RaisePropertyChanged(() => Trailer); }
         }
 
-        public ObservableCollection<Actor> Actors
+        public ObservableCollection<ActorModel> Actors
         {
             get { return mActors; }
             set { SetProperty(ref mActors, value); }
         }
 
-        public ObservableCollection<Category> Categories
+        public ObservableCollection<CategoryModel> Categories
         {
             get { return mCategories; }
             set { SetProperty(ref mCategories, value); }
         }
 
-        public ICommand GoBackCommand
+        public ICommand AddMovieGoBackCommand
         {
             get
             {

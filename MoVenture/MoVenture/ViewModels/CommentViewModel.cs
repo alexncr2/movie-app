@@ -1,4 +1,5 @@
-﻿using MoVenture.Interfaces;
+﻿using MoVenture.Models;
+using MoVenture.Interfaces;
 using MoVenture.Models;
 using MvvmCross.Core.ViewModels;
 using System;
@@ -11,6 +12,7 @@ namespace MoVenture.ViewModels
         private readonly IMovieService mMovieService;
         
         private string mCommentMessage;
+        private float mRating;
         public Action OnCancel { get; set; }
 
         public CommentViewModel()
@@ -21,6 +23,12 @@ namespace MoVenture.ViewModels
         {
             get { return mCommentMessage; }
             set { mCommentMessage = value; RaisePropertyChanged(() => CommentMessage); }
+        }
+
+        public float Rating
+        {
+            get { return mRating; }
+            set { mRating = value; RaisePropertyChanged(() => Rating); }
         }
 
 
@@ -34,8 +42,8 @@ namespace MoVenture.ViewModels
 
         private void SaveComment()
         {
-            // Comment c = new Comment(CommentMessage);
-            return;
+            // ShowViewModel<MovieCommentsViewModel>(new Comment(Rating, CommentMessage));
+            Close(this);
         }
 
 

@@ -5,13 +5,13 @@ using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MoVenture.ViewModels;
-using MoVenture.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Android.Support.V7.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using MoVenture.Models;
 
 namespace MoVenture.Android.Views
 {
@@ -57,9 +57,15 @@ namespace MoVenture.Android.Views
             helper.AttachToRecyclerView(MoviesRecyclerView);
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
+        public void OnRowClicked(int row)
         {
-            switch (item.ItemId)
+            var movie = ViewModel.Movies[row];
+            // ViewModel.ViewDetailsCommand.Execute(movie);
+        }
+
+        public bool OnNavigationItemSelected(IMenuItem menuItem)
+        {
+            switch (menuItem.ItemId)
             {
                 case Resource.Id.nav_my_movies:
                     return true;
@@ -71,31 +77,20 @@ namespace MoVenture.Android.Views
                 case Resource.Id.nav_logout:
                     return true;
             }
-            
-            return base.OnOptionsItemSelected(item);
-        }
 
-        public void OnRowClicked(int row)
-        {
-            var movie = ViewModel.Movies[row];
-            ViewModel.ViewDetailsCommand.Execute(movie);
-        }
-
-        public bool OnNavigationItemSelected(IMenuItem menuItem)
-        {
-            return false;
+            return true;
         }
     }
 
     public class CustomMovieAdapter : MvxRecyclerAdapter
     {
         public Action<int> OnRowClicked { get; set; }
-        private readonly List<Movie> allMovies;
+        private List<MinifiedMovie> allMovies;
 
-        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked, IEnumerable<Movie> allMovies)
+        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked, IEnumerable<MinifiedMovie> allMinMovies)
             : base(bindingContext)
         {
-            this.allMovies = allMovies.ToList();
+            this.allMovies = allMinMovies.ToList();
             OnRowClicked = onRowClicked;
         }
 

@@ -54,17 +54,20 @@
       {
         "id": "54ec2237-6776-476e-a21a-fd9c0e08a7f1",
         "message": "In this universe, Tom holland warns us about spoilers, multiverse indeed",
-        "status": "0"
+        "status": "0",
+        "rating": "5.0"
       },
       {
         "id": "54ec2232-6776-476e-a21a-fd9c0e08a7f1",
         "message": "Poor Uncle Ben is really getting screwed over by the mcu. Ironman took his one job.",
-        "status": "0"
+        "status": "0",
+        "rating": "3.0"
       },
       {
         "id": "22ec2222-6776-476e-a21a-fd9c0e08a7f1",
         "message": "Imagine that one guy who hasn’t seen endgame skips 10 seconds ahead because he thought there would be be marvel logo.. May he rest in peace.﻿",
-        "status": "0"
+        "status": "0",
+        "rating": "4.0"
       }
     ]
   },
