@@ -49,8 +49,9 @@ namespace MoVenture.ViewModels
         public void Init(Guid movieId)
         {
             mMovieId = movieId;
-            //Movie = mMovieService.Get(movieId);
-            Task.Run(async () => await GetDataForMovie(mMovieId).ConfigureAwait(false)).ConfigureAwait(false);
+            Movie = mMovieService.Get(movieId);
+            MovieTitle = Movie.Title;
+            // Task.Run(async () => await GetDataForMovie(mMovieId).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         private async Task GetDataForMovie(Guid id)

@@ -76,13 +76,14 @@ namespace MoVenture.ViewModels
         {
             if (mCoreValidationService.IsLoginValid(mEmail, mPassword))
             {
-                Task.Run(async () => await LoginAsyncTask().ConfigureAwait(false)).ConfigureAwait(false);
-                
+                // Task.Run(async () => await LoginAsyncTask().ConfigureAwait(false)).ConfigureAwait(false);
+                LoginAsyncTask();
                 return;
             }
             mNativeValidationService.ShowNativeMessage("Login attempt invalid");
         }
 
+        /*
         private async Task LoginAsyncTask()
         {
             var user = await HttpClientManager.GetUserDataData(Email);
@@ -95,6 +96,13 @@ namespace MoVenture.ViewModels
                 MovieHelper.MinCategories = user.Categories.ToList();
                 ShowViewModel<MoviesViewModel>();
             }
+        }
+        */
+
+        private void LoginAsyncTask()
+        {
+            // MovieHelper.MinCategories = user.Categories.ToList();
+            ShowViewModel<MoviesViewModel>();
         }
 
         private void SwitchAuthMode()

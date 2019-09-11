@@ -85,9 +85,9 @@ namespace MoVenture.Android.Views
     public class CustomMovieAdapter : MvxRecyclerAdapter
     {
         public Action<int> OnRowClicked { get; set; }
-        private List<MinifiedMovie> allMovies;
+        private List<Movie> allMovies;
 
-        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked, IEnumerable<MinifiedMovie> allMinMovies)
+        public CustomMovieAdapter(IMvxAndroidBindingContext bindingContext, Action<int> onRowClicked, IEnumerable<Movie> allMinMovies)
             : base(bindingContext)
         {
             this.allMovies = allMinMovies.ToList();

@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
 				android:scaleType="centerCrop"
-				local:MvxBind="ImageUrl Picture"/>
+				local:MvxBind="ImageUrl PictureUrl"/>
 			
             <TextView
                 android:id="@+id/tv_actor_firstname"

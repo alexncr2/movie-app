@@ -4,7 +4,7 @@
     "title": "Spider-Man: Far from Home",
     "description": "Peter Parker and his friends go on a European vacation, where Peter finds himself agreeing to help Nick Fury uncover the mystery of several elemental creature attacks, creating havoc across the continent.",
     "rating": "4.5",
-    "picture": "http://www.gstatic.com/tv/thumb/v22vodart/12798844/p12798844_v_v8_as.jpg",
+    "picture": "https://i.pinimg.com/originals/9f/4c/ff/9f4cff0b97f4056a50ca2ec2b3614570.png",
     "trailer": "https://www.youtube.com/watch?v=LFoz8ZJWmPs",
     "status": "0",
     "categories": [
@@ -30,7 +30,7 @@
         "firstName": "Tom",
         "lastName": "Holland",
         "description": "Thomas Stanley Holland was born in Kingston-upon-Thames, Surrey, to Nicola Elizabeth (Frost), a photographer, and Dominic Holland (Dominic Anthony Holland), who is a comedian and author. His paternal grandparents were from the Isle of Man and Ireland, respectively.",
-        "picture": "https://m.media-amazon.com/images/M/MV5BNTAzMzA3NjQwOF5BMl5BanBnXkFtZTgwMDUzODQ5MTI@._V1_UY317_CR23,0,214,317_AL_.jpg",
+        "picture": "https://m.media-amazon.com/images/M/MV5BNTAzMzA3NjQwOF5BMl5BanBnXkFtZTgwMDUzODQ5MTI@._V1_.jpg",
         "status": "0"
       },
       {
@@ -38,7 +38,7 @@
         "firstName": "Zendaya",
         "lastName": "Coleman",
         "description": "Zendaya is an American actress and singer born in Oakland, California. She began her career appearing as a child model working for Macy's, Mervyns and Old Navy. She was a backup dancer before gaining prominence for her role as Rocky Blue on the Disney Channel sitcom Shake It Up",
-        "picture": "https://timedotcom.files.wordpress.com/2014/06/zendaya1.jpg",
+        "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Zendaya_by_Gage_Skidmore.jpg/159px-Zendaya_by_Gage_Skidmore.jpg",
         "status": "0"
       },
       {
@@ -76,7 +76,7 @@
     "title": "Star Wars: The Last Jedi",
     "description": "Star Wars: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
     "rating": "4.5",
-    "picture": "https://www.closeup-shop.com/media/oart_0/oart_s/oart_83320/thumbs/837176_2074604.jpg",
+    "picture": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "trailer": "https://www.youtube.com/watch?v=nKQUgWCHRRs",
     "status": "0",
     "categories": [
@@ -97,7 +97,7 @@
         "firstName": "BoJack",
         "lastName": "Horseman",
         "description": "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultr",
-        "picture": "http://s3.amazonaws.com/sbstatesman/wp-content/uploads/2017/09/05160718/21369573_1462137293902218_3167238876832024828_n.png",
+        "picture": "https://pixel.nymag.com/imgs/daily/vulture/2016/07/26/26-bojack-horseman.w700.h700.jpg",
         "status": "0"
       },
       {
@@ -117,7 +117,7 @@
     "title": "Blade Runner",
     "description": "Blade Runner Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue luctus tortor, sit amet ultrices dolor sodales sit amet. Sed condimentum, nisi ut dictum consequat, ipsum urna efficitur libero, a congue nulla dolor interdum est.",
     "rating": "3.5",
-    "picture": "https://j.b5z.net/i/u/6127364/i/ec/blader889_i2.jpg",
+    "picture": "https://upload.wikimedia.org/wikipedia/en/9/9b/Blade_Runner_2049_poster.png",
     "trailer": "https://www.youtube.com/watch?v=gCcx85zbxz4",
     "status": "0",
     "categories": [

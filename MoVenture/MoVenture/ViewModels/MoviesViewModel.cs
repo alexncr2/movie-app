@@ -14,8 +14,8 @@ namespace MoVenture.ViewModels
     {
         private readonly IMovieService mMovieService;
 
-        private ObservableCollection<MinifiedMovie> mMovies;
-        private ObservableCollection<MinifiedMovie> mMoviesCopy;
+        private ObservableCollection<Movie> mMovies;
+        private ObservableCollection<Movie> mMoviesCopy;
         private string mSearchTerm;
 
         private ICommand mViewDetailsCommand;
@@ -27,7 +27,7 @@ namespace MoVenture.ViewModels
             mMovieService = movieService;
         }
 
-        public ObservableCollection<MinifiedMovie> Movies
+        public ObservableCollection<Movie> Movies
         {
             get { return mMovies; }
             set { SetProperty(ref mMovies, value); }
@@ -46,7 +46,7 @@ namespace MoVenture.ViewModels
             {
                 if (mViewDetailsCommand == null)
                 {
-                    mViewDetailsCommand = new MvxCommand<MinifiedMovie>(ViewDetails);
+                    mViewDetailsCommand = new MvxCommand<Movie>(ViewDetails);
                 }
                 return mViewDetailsCommand;
             }
@@ -76,13 +76,12 @@ namespace MoVenture.ViewModels
 
             //Task.Run(async () => await mMovieService.GetMovies(false).ConfigureAwait(false)).ConfigureAwait(false);
             // Task.Run(async () => await GetData().ConfigureAwait(false)).ConfigureAwait(false);
-            
-            Movies = new ObservableCollection<MinifiedMovie>(MovieHelper.MinMovies);
-            
-            
+
+            // Movies = new ObservableCollection<MinifiedMovie>(MovieHelper.MinMovies);
+            Movies = new ObservableCollection<Movie>(mMovieService.GetMoviesBackupFile(false));
         }
 
-        private void ViewDetails(MinifiedMovie movie)
+        private void ViewDetails(Movie movie)
         {
             ShowViewModel<MovieViewModel>(new { movieId = movie.Id });
         }
@@ -92,7 +91,7 @@ namespace MoVenture.ViewModels
             if (!string.IsNullOrWhiteSpace(mSearchTerm))
             {
                 var filteredFriends = Movies.Where(fr => fr.Title.ToLower().Contains(mSearchTerm.ToLower())).ToList();
-                Movies = new ObservableCollection<MinifiedMovie>(filteredFriends);
+                Movies = new ObservableCollection<Movie>(filteredFriends);
             }
             else
             {
